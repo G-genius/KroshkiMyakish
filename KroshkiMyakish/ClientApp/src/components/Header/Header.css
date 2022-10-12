@@ -10,7 +10,6 @@ header {
 
 .menu {
     display: flex;
-    justify-content: flex-end;
     list-style: none;
 }
 .menu li {
@@ -26,6 +25,7 @@ header {
 .menu-btn {
     margin-right: 150px;
     display: flex;
+    justify-content: flex-end;
 }
 
 @media screen and (max-width: 720px){
