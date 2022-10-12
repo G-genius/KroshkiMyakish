@@ -1,9 +1,16 @@
 import "./Header.css"
+import regIcon from "../../img/header/reg.svg"
+import logIcon from "../../img/header/log.svg"
 const Header = () => {
     return (
         <header>
-            <h1>КрошкиМякиш</h1>
-            <nav><a>First Link</a><a>Second Link</a><a>Third Link</a></nav>
+            <ul className="menu">
+                <div className="menu-btn">
+                    <li className="register"><img src={regIcon} alt={regIcon}/> Регистрация</li>
+                    <li className="login"><img src={logIcon} alt={logIcon}/> Вход</li>
+                </div>
+
+            </ul>
         </header>
     )
 }
