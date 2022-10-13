@@ -1,0 +1,20 @@
+.left-menu {
+    margin-left: 100px;
+    width: 233px;
+}
+
+.main-name {
+    margin: 0 auto;
+    font-size: 30px;
+    font-weight: bolder;
+    font-style: italic;
+    color: #509E2F;
+}
+
+.list-menu {
+    margin-top: 30px;
+    font-weight: bold;
+}
+.list-menu p {
+    cursor: pointer;
+}
