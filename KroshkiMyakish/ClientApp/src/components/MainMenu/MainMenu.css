@@ -1,0 +1,18 @@
+.main-menu {
+    display: flex;
+    margin: 15px auto 15px auto ;
+    width: 725px;
+}
+.main-menu p {
+    margin: 0 auto;
+    display: flex;
+    color: #509E2F;
+    font-weight: bold;
+    cursor: pointer;
+}
+.menu-line img {
+    display: flex;
+    margin: 0 auto;
+    height: 5px;
+    width: 725px;
+}

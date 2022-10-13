@@ -3,7 +3,7 @@ import Header from "../components/Header/Header";
 import SubHeader from "../components/Header/SubHeader/SubHeader";
 import SliderSlick from "../components/Header/Slider/SliderSlick";
 import Footer from "../components/Footer/Footer";
-import LeftMenu from "../components/LeftMenu/LeftMenu";
+import Main from "../components/Main";
 
 export class Layout extends Component {
     render() {
@@ -12,7 +12,7 @@ export class Layout extends Component {
                 <Header/>
                 <SubHeader/>
                 <SliderSlick/>
-                <LeftMenu/>
+                <Main/>
                 <Footer/>
             </div>
         );
