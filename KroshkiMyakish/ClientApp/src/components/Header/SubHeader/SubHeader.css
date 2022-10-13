@@ -52,6 +52,27 @@
 .user-icon {
     width: 43px;
     height: 46px;
-    margin-left: 200px;
     cursor: pointer;
+    margin-left: 50px;
+}
+.user {
+    display: flex;
+}
+
+.add-recipe {
+    display: flex;
+    border: solid #509E2F;
+    border-radius: 15px;
+    margin-left: 50px;
+    width: 200px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: #509E2F;
+    text-decoration: none;
+}
+.add-recipe:hover {
+    background: #509E2F;
+    color: #D9D9D9;
 }

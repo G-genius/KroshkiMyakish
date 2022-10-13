@@ -19,7 +19,9 @@ const SubHeader = () => {
                     <img src={searchIcon} alt={searchIcon}/>
                 </div>
             </div>
+
             <div className="user">
+                <a className="add-recipe">Добавить рецепт</a>
                 <img className="user-icon" src={userIcon} alt={userIcon}/>
             </div>
         </div>
