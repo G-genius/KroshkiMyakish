@@ -1,5 +1,4 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { SocialIcon } from 'react-social-icons';
 import "./Footer.css"
 const Footer = () => {
@@ -32,8 +31,11 @@ const Footer = () => {
             </div>
             <div className="third-block">
                 <p>Мы в соц-сетях:</p>
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a><SocialIcon network="vk" bgColor="#509E2F" /></a>
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a><SocialIcon network="google" bgColor="#509E2F" /></a>
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a><SocialIcon network="whatsapp" bgColor="#509E2F" /></a>
             </div>
         </footer>

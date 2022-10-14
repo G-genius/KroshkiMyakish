@@ -1,10 +1,8 @@
 .left-menu {
-    margin-left: 100px;
-    width: 233px;
+    display: flex;
 }
 
 .main-name {
-    margin: 0 auto;
     font-size: 30px;
     font-weight: bolder;
     font-style: italic;
@@ -12,8 +10,8 @@
 }
 
 .list-menu {
-    margin-top: 30px;
     font-weight: bold;
+    margin-left: 100px;
 }
 .list-menu p {
     cursor: pointer;

@@ -9,6 +9,7 @@ const SubHeader = () => {
             <img className="logo" src={logo} alt={logo}/>
             <div className="search">
                 <div className="category">
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a>Все категории</a>
                     <img className="arrow" src={arrow} alt={arrow}/>
                 </div>
@@ -21,6 +22,7 @@ const SubHeader = () => {
             </div>
 
             <div className="user">
+                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <a className="add-recipe">Добавить рецепт</a>
                 <img className="user-icon" src={userIcon} alt={userIcon}/>
             </div>

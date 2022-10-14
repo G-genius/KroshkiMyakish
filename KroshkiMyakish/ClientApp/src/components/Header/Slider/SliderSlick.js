@@ -19,13 +19,13 @@ const SliderSlick = () => {
         <div>
             <Slider {...settings}>
                 <div>
-                    <img className="sliderImg" src={slider1}/>
+                    <img className="sliderImg" src={slider1} alt="slider"/>
                 </div>
                 <div>
-                    <img className="sliderImg" src={slider2}/>
+                    <img className="sliderImg" src={slider2} alt="slider"/>
                 </div>
                 <div>
-                    <img className="sliderImg" src={slider3}/>
+                    <img className="sliderImg" src={slider3} alt="slider"/>
                 </div>
             </Slider>
         </div>

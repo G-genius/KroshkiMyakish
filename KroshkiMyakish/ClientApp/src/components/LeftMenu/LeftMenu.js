@@ -1,10 +1,11 @@
 import "./LeftMenu.css"
 import React from "react";
+import RecipeList from "../MainMenu/RecipeList/RecipeList";
 const LeftMenu = () => {
     return (
         <div className="left-menu">
-            <p className="main-name">Рецепты</p>
             <div className="list-menu">
+                <p className="main-name">Рецепты</p>
                 <p>Новые рецепты</p>
                 <p>Бульоны и супы</p>
                 <p>Горячие блюда</p>
@@ -15,6 +16,12 @@ const LeftMenu = () => {
                 <p>Соусы</p>
                 <p>Домашние напитки</p>
             </div>
+            <RecipeList/>
+
+            <div>
+
+            </div>
+
         </div>
     )
 }

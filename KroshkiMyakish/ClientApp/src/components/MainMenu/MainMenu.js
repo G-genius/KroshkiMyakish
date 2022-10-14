@@ -1,5 +1,6 @@
 import "./MainMenu.css"
 import line from "../../img/MainMenu/line.png"
+import rightIcon from "../../img/MainMenu/rightIcon.png"
 
 const MainMenu = () => {
     return (
@@ -16,7 +17,6 @@ const MainMenu = () => {
             <div className="menu-line">
                 <img src={line} alt="line"/>
             </div>
-
         </div>
     )
 }
