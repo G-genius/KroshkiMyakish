@@ -39,4 +39,5 @@ footer {
     color: #D9D9D9;
 }.third-block a {
      margin-right: 5px;
+     cursor: pointer;
  }

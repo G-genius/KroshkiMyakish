@@ -1,5 +1,6 @@
 .left-menu {
     display: flex;
+
 }
 
 .main-name {
@@ -12,6 +13,8 @@
 .list-menu {
     font-weight: bold;
     margin-left: 100px;
+    justify-content: start;
+    margin-right: 120px;
 }
 .list-menu p {
     cursor: pointer;

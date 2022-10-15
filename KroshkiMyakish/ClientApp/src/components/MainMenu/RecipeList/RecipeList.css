@@ -1,13 +1,18 @@
-.recipe-list {
+.recipeList {
     display: flex;
     justify-content: center;
-    align-items: center;
-    width: 900px;
-
+}
+.recipe-list {
+    display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
+    flex-flow: row wrap;
+    justify-content: start;
+
 }
 .list-item {
-    display: block;
+    display: flex;
+    flex-direction: column;
     padding: 20px;
     cursor: pointer;
 }

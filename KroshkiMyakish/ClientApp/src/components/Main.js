@@ -8,7 +8,7 @@ const Main = () => {
             <MainMenu/>
             <div className="main">
                 <LeftMenu/>
-                <img className="left-icon" src={rightIcon}/>
+                <img className="left-icon" src={rightIcon} alt="left-icon"/>
             </div>
         </div>
 
