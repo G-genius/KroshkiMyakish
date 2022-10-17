@@ -3,7 +3,7 @@
 }
 .left-icon {
     display: flex;
-    justify-content: end;
+    /*justify-content: end;*/
     width: 390px;
     height: 600px;
 }

@@ -1,0 +1,73 @@
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Оставаться на месте */
+    z-index: 1; /* Сидеть на вершине */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Включите прокрутку, если это необходимо */
+    background-color: rgb(0,0,0); /* Цвет запасной вариант */
+    background-color: rgba(0,0,0,0.4); /* Черный с непрозрачностью */
+}
+
+/* Модальное содержание/коробка */
+.modal-content {
+    display: flex;
+    background-color: #D9D9D9;
+    color: #509E2F;
+    margin: 15% auto; /* 15% сверху и по центру */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%; /* Может быть больше или меньше, в зависимости от размера экрана */
+}
+.field-form {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    align-items: center;
+
+}
+.RegName {
+    font-weight: bold;
+    font-size: xx-large;
+    padding: 10px;
+}
+.modal-content p {
+    display: flex;
+    margin: 0 auto;
+}
+.modal-content input {
+    width: 100%;
+}
+/* Кнопка закрытия */
+.close {
+    color: #aaa;
+    justify-content: end;
+    font-size: 28px;
+    font-weight: bold;
+    width: 20px;
+    height: 25px;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.regBtn{
+    padding: 10px;
+    background: #D9D9D9;
+    color: #509E2F;
+    border-radius: 15px;
+    border: solid #509E2F;
+    margin-top: 10px;
+}
+.regBtn:hover {
+    background: #509E2F;
+    color: #D9D9D9;
+}
+.bottom-btn {
+    padding: 10px;
+}

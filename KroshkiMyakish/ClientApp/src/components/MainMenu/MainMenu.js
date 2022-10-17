@@ -4,7 +4,7 @@ import rightIcon from "../../img/MainMenu/rightIcon.png"
 
 const MainMenu = () => {
     return (
-        <div>
+        <div className="MainMenu">
             <div className="menu-line">
                 <img src={line} alt="line"/>
             </div>

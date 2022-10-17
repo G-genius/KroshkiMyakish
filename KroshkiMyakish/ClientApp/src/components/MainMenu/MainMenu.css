@@ -3,6 +3,9 @@
     margin: 15px auto 15px auto ;
     width: 725px;
 }
+.MainMenu {
+    margin-top: 30px;
+}
 .main-menu p {
     margin: 0 auto;
     display: flex;

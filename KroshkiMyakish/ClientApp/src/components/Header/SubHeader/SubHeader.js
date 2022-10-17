@@ -3,6 +3,7 @@ import "./SubHeader.css"
 import arrow from "./../../../img/header/arrow.svg"
 import searchIcon from "../../../img/header/searchIcon.svg"
 import userIcon from "../../../img/header/user.svg"
+
 const SubHeader = () => {
     return (
         <div className="sub-header">
@@ -26,6 +27,8 @@ const SubHeader = () => {
                 <a className="add-recipe">Добавить рецепт</a>
                 <img className="user-icon" src={userIcon} alt={userIcon}/>
             </div>
+
+
         </div>
     )
 }

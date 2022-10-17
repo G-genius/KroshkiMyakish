@@ -7,7 +7,6 @@
     flex-direction: row;
     flex-wrap: wrap;
     flex-flow: row wrap;
-    justify-content: start;
 
 }
 .list-item {
