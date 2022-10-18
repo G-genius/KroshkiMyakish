@@ -2,6 +2,7 @@ import "./Header.css"
 import regIcon from "../../img/header/reg.svg"
 import logIcon from "../../img/header/log.svg"
 import "./Modal.css"
+import showPass from "../../img/header/show-pass.svg"
 
 const Header = () => {
 
@@ -35,6 +36,19 @@ const Header = () => {
         }
     }
 
+    const OpenPassword = () => {
+        let passInput = document.getElementById("pass-input")
+        let passInputRepeat = document.getElementById("pass-input-repeat")
+        if (passInput.type === "password") {
+            passInput.type = "text"
+            passInputRepeat.type = "text"
+        }
+        else {
+            passInput.type = "password"
+            passInputRepeat.type = "password"
+        }
+    }
+
     return (
         <header>
             <div className="menu-btn">
@@ -56,11 +70,17 @@ const Header = () => {
                         </div>
                         <div>
                             <p>Введите пароль</p>
-                            <input type="password"/>
+                            <div className="pass-field">
+                                <input id="pass-input" type="password"/>
+                                <img src={showPass} className="open-pass-btn" onClick={OpenPassword} alt="showPass"/>
+                            </div>
                         </div>
                         <div>
                             <p>Повторите пароль</p>
-                            <input type="password"/>
+                            <div className="pass-field">
+                                <input id="pass-input-repeat" type="password"/>
+                                <img src={showPass} className="open-pass-btn" onClick={OpenPassword} alt="showPass"/>
+                            </div>
                         </div>
                         <div>
                             <button className="regBtn">Зарегистрироваться</button>
@@ -84,7 +104,10 @@ const Header = () => {
                         </div>
                         <div>
                             <p>Введите пароль</p>
-                            <input type="password"/>
+                            <div className="pass-field">
+                                <input id="pass-input" type="password"/>
+                            </div>
+
                         </div>
                         <div>
                             <button className="regBtn">Войти</button>

@@ -5,6 +5,7 @@
 .slider-slick{
     width: 100%;
     height: 435px;
+    cursor: grabbing;
 }
 .desc-slider {
     position: relative;

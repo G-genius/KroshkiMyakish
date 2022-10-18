@@ -28,6 +28,18 @@ header {
     justify-content: flex-end;
 }
 
+.pass-field {
+    display: flex;
+}
+.open-pass-btn{
+    display: flex;
+    margin-left: -27px;
+    cursor: pointer;
+}
+.bottom-btn{
+    cursor: pointer;
+}
+
 @media screen and (max-width: 720px){
 
     header {
