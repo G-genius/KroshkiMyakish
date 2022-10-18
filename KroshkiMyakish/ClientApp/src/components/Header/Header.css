@@ -18,6 +18,9 @@ header {
     cursor: pointer;
     text-transform: uppercase;
 }
+.menu li:hover {
+    color: #509E2F;
+}
 .menu img {
     height: 13px;
     width: 20px;

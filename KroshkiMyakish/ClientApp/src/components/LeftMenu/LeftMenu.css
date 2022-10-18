@@ -19,3 +19,6 @@
 .list-menu p {
     cursor: pointer;
 }
+.list-menu p:hover {
+    color: #509E2F;
+}
