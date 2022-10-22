@@ -2,3 +2,32 @@
     display: flex;
     flex-direction: column;
 }
+.add_recipe h1 {
+    text-align: left;
+}
+.add_recipe_form {
+    display: flex;
+    padding-top: 20px;
+    width: 100%;
+}
+.add_recipe_form p {
+    width: 200px;
+}
+.add_recipe_item {
+    width: 600px;
+}
+.big_input {
+    width: 100%;
+}
+textarea {
+    width: 100%;
+    min-height: 50px;
+    max-height: 200px;
+}
+.short_input {
+    width: 50px;
+    text-align: center;
+}
+.button-add-recipe {
+    margin: 10px 10px 10px 10px;
+}

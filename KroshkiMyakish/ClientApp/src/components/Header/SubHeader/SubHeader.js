@@ -3,12 +3,17 @@ import "./SubHeader.css"
 import arrow from "./../../../img/header/arrow.svg"
 import searchIcon from "../../../img/header/searchIcon.svg"
 import userIcon from "../../../img/header/user.svg"
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 
 const SubHeader = () => {
+    const navigate = useNavigate()
+    const OpenMainPage = () => {
+      navigate("/")
+    }
+
     return (
         <div className="sub-header">
-            <img className="logo" src={logo} alt={logo}/>
+            <img className="logo" onClick={OpenMainPage} src={logo} alt={logo}/>
             <div className="search">
                 <div className="category">
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}

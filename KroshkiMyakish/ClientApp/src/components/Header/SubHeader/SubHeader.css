@@ -1,6 +1,7 @@
 .logo {
     width: 250px;
     height: 90px;
+    cursor: pointer;
 }
 .sub-header {
     display: flex;
