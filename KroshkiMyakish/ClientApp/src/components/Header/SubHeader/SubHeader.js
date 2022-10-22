@@ -3,6 +3,7 @@ import "./SubHeader.css"
 import arrow from "./../../../img/header/arrow.svg"
 import searchIcon from "../../../img/header/searchIcon.svg"
 import userIcon from "../../../img/header/user.svg"
+import {Link} from "react-router-dom";
 
 const SubHeader = () => {
     return (
@@ -24,7 +25,7 @@ const SubHeader = () => {
 
             <div className="user">
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                <a className="add-recipe">Добавить рецепт</a>
+                <Link to="/add-recipe" className="add-recipe">Добавить рецепт</Link>
                 <img className="user-icon" src={userIcon} alt={userIcon}/>
             </div>
 
