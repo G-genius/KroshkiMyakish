@@ -4,8 +4,6 @@ import Header from "../../components/Header/Header";
 import SubHeader from "../../components/Header/SubHeader/SubHeader";
 import Footer from "../../components/Footer/Footer";
 import {Checkbox} from "@mui/material";
-import {theme} from "../../Pages/Layout"
-import rightIcon from "../../img/MainMenu/rightIcon.png";
 
 const AddRecipe = () => {
     return (
@@ -95,6 +93,7 @@ const AddRecipe = () => {
                     </div>
                     <div className="button-add-recipe">
                         <Checkbox/>
+                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                         <span> - Я согласен с <a href="">условиями размещения</a></span>
                     </div>
                     <div className="add_recipe_form">

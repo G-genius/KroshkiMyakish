@@ -3,6 +3,7 @@ import { Route, Routes } from 'react-router-dom';
 import { Layout } from './Pages/Layout';
 import './custom.css';
 import AddRecipe from "./Pages/AddRecipePage/AddRecipe";
+import RecipeInfo from "./components/RecipeInfo/RecipeInfo";
 
 export default class App extends Component {
   static displayName = App.name;
@@ -12,6 +13,7 @@ export default class App extends Component {
         <Routes>
             <Route path='/' element={<Layout />}/>
             <Route path="add-recipe" element={<AddRecipe/>}/>
+            <Route path="recipes/:id" element={<RecipeInfo/>}/>
         </Routes>
     );
   }

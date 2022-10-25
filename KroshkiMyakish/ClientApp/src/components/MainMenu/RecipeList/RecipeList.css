@@ -21,6 +21,8 @@
 }
 .list-item p {
     text-align: left;
+    color: black;
+    text-decoration: none;
 }
 .recipe-bottom-list {
     display: flex;
@@ -38,4 +40,7 @@
 .recipe-bottom p {
     display: flex;
     margin: 0 auto;
+}
+.link {
+    text-decoration: none;
 }
