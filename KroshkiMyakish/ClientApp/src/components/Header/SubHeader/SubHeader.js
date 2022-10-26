@@ -8,7 +8,12 @@ import {Link, useNavigate} from "react-router-dom";
 const SubHeader = () => {
     const navigate = useNavigate()
     const OpenMainPage = () => {
-      navigate("/")
+        navigate("/")
+        window.scrollBy(0, -10000)
+    }
+    const OpenAccountPage = () => {
+        navigate("/account")
+        window.scrollBy(0, -10000)
     }
 
     return (
@@ -31,7 +36,7 @@ const SubHeader = () => {
             <div className="user">
                 {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <Link to="/add-recipe" className="add-recipe">Добавить рецепт</Link>
-                <img className="user-icon" src={userIcon} alt={userIcon}/>
+                <img className="user-icon" src={userIcon} alt={userIcon} onClick={OpenAccountPage}/>
             </div>
 
 

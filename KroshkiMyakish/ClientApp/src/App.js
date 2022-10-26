@@ -4,6 +4,7 @@ import { Layout } from './Pages/Layout';
 import './custom.css';
 import AddRecipe from "./Pages/AddRecipePage/AddRecipe";
 import RecipeInfo from "./components/RecipeInfo/RecipeInfo";
+import AccountPage from "./Pages/AccountPage/AccountPage";
 
 export default class App extends Component {
   static displayName = App.name;
@@ -14,6 +15,7 @@ export default class App extends Component {
             <Route path='/' element={<Layout />}/>
             <Route path="add-recipe" element={<AddRecipe/>}/>
             <Route path="recipes/:id" element={<RecipeInfo/>}/>
+            <Route path="account" element={<AccountPage/>}/>
         </Routes>
     );
   }

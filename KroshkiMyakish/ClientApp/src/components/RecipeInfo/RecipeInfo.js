@@ -1,14 +1,12 @@
 import dish1 from "../../img/dish1.jpg"
 import "./RecipeInfo.css"
 import Header from "../Header/Header";
-import SubHeader from "../Header/SubHeader/SubHeader";
 import Footer from "../Footer/Footer";
 
 const RecipeInfo = () => {
     return (
         <div className="recipe_info">
             <Header/>
-            <SubHeader/>
             <div className="container">
                 <div className="recipe_info_item">
                     <div className="recipe_category">

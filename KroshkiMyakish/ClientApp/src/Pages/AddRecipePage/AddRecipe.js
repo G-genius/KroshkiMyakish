@@ -1,7 +1,6 @@
 import "./AddRecipe.css"
 import FileBase64 from 'react-filebase64';
 import Header from "../../components/Header/Header";
-import SubHeader from "../../components/Header/SubHeader/SubHeader";
 import Footer from "../../components/Footer/Footer";
 import {Checkbox} from "@mui/material";
 
@@ -9,7 +8,6 @@ const AddRecipe = () => {
     return (
         <div>
             <Header/>
-            <SubHeader/>
             <div className="container">
                 <div className="add_recipe">
                     <h1>Добавление рецепта</h1>
