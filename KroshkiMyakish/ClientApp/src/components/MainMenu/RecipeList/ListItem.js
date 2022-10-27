@@ -12,7 +12,7 @@ const ListItem = () => {
     }
     return (
         <div className="list-item">
-            <Link to="/recipes/1" className="link" onClick={OpenRecipe}>
+            <Link to="/recipe/1" className="link" onClick={OpenRecipe}>
                 <img src={dish1} alt="dish1"/>
                 <p>Сёмга с картошкой</p>
                 <div className="recipe-bottom-list">
