@@ -2,8 +2,17 @@ import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import UserLogo from "../../img/header/user.svg"
 import "./AccountPage.css"
+import {useNavigate} from "react-router-dom";
 
 const AccountPage = () => {
+
+    const navigate = useNavigate()
+
+    const OpenEditPage = () => {
+        navigate("/account/edit")
+        window.scrollBy(0, -10000)
+    }
+
     return (
         <div>
             <Header/>
@@ -31,7 +40,7 @@ const AccountPage = () => {
                         </div>
                     </div>
                     <div className="change_info">
-                        <a>Редактировать профиль</a>
+                        <a onClick={OpenEditPage}>Редактировать профиль</a>
                     </div>
                 </div>
             </div>

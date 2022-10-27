@@ -1,6 +1,5 @@
 import "./MainMenu.css"
 import line from "../../img/MainMenu/line.png"
-import rightIcon from "../../img/MainMenu/rightIcon.png"
 
 const MainMenu = () => {
     return (

@@ -49,6 +49,19 @@ const Header = () => {
         }
     }
 
+    const OpenNotReg = () => {
+        let modelReg = document.getElementById("regModal")
+        let modelLog = document.getElementById("logModal")
+        if (modelReg.style.display === "block") {
+            modelReg.style.display = "none"
+            modelLog.style.display = "block"
+        }
+        else {
+            modelReg.style.display = "block"
+            modelLog.style.display = "none"
+        }
+    }
+
     return (
         <div className="header">
             <header>
@@ -89,7 +102,7 @@ const Header = () => {
                                 <button className="regBtn">Зарегистрироваться</button>
                             </div>
                             <div>
-                                <p className="bottom-btn">Уже есть аккаунт? Войти</p>
+                                <p className="bottom-btn" onClick={OpenNotReg}>Уже есть аккаунт? Войти</p>
                             </div>
                         </div>
                     </div>
@@ -116,7 +129,7 @@ const Header = () => {
                                 <button className="regBtn">Войти</button>
                             </div>
                             <div>
-                                <p className="bottom-btn">Нет аккаунта? Зарегистрироваться</p>
+                                <p className="bottom-btn" onClick={OpenNotReg}>Нет аккаунта? Зарегистрироваться</p>
                             </div>
                         </div>
                     </div>

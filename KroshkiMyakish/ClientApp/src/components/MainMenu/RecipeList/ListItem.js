@@ -1,10 +1,9 @@
 import dish1 from "../../../img/dish1.jpg";
 import watch from "../../../img/MainMenu/RecipeList/watch.svg";
 import chat from "../../../img/MainMenu/RecipeList/chat.svg";
-import {Link, useNavigate} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const ListItem = () => {
-    const navigate = useNavigate()
     const OpenRecipe = () => {
         window.scrollBy({
             top: -10000,
