@@ -1,0 +1,33 @@
+.account_main_page {
+    display: flex;
+    padding: 50px;
+}
+.account_page {
+    display: flex;
+    flex-direction: column;
+}
+.account_info {
+    display: flex;
+}
+.user_locate {
+    margin-left: 20px;
+}
+.account_info img {
+    width: 80px;
+}
+.user_name {
+    font-size: 20px;
+}
+.account-block {
+    margin-top: 20px;
+}
+.change_info {
+    display: flex;
+    margin-left: 200px;
+    cursor: pointer;
+    color: #509E2F;
+    height: 20px;
+}
+.change_info a {
+    color: #D9D9D9;
+}
