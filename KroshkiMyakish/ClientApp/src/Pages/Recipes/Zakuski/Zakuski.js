@@ -1,10 +1,10 @@
-const Soups = () => {
+const Zakuski = () => {
     return (
         <div>
             <div className="container">
-                <h1>Бульоны и супы</h1>
+                <h1>Закуски</h1>
             </div>
         </div>
     )
 }
-export default Soups
+export default Zakuski

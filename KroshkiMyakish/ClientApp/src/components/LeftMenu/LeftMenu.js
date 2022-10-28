@@ -1,7 +1,7 @@
 import "./LeftMenu.css"
 import React from "react";
 import RecipeList from "../MainMenu/RecipeList/RecipeList";
-import {Link} from "react-router-dom";
+import {Link, Outlet} from "react-router-dom";
 const LeftMenu = () => {
     return (
         <div className="left-menu">
@@ -17,8 +17,8 @@ const LeftMenu = () => {
                 <Link className="recipe_list_item" to="/recipes/sousy">Соусы</Link>
                 <Link className="recipe_list_item" to="/recipes/napitki">Домашние напитки</Link>
             </div>
-            <RecipeList/>
-
+            {/*<RecipeList/>*/}
+            <Outlet/>
             <div>
 
             </div>

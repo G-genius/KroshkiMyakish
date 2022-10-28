@@ -1,13 +1,13 @@
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
+import {Link, Outlet} from "react-router-dom";
+import LeftMenu from "../../components/LeftMenu/LeftMenu";
 
 const RecipesPage = () => {
     return (
         <div>
             <Header/>
-            <div className="container">
-                <h1>Рецепты</h1>
-            </div>
+            <LeftMenu/>
             <Footer/>
         </div>
     )
