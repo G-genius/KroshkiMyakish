@@ -4,6 +4,7 @@ import "../Slider/SliderSlick.css"
 import slider1 from "../../../img/slider1.png"
 import slider2 from "../../../img/slider2.jpg"
 import slider3 from "../../../img/slider3.jpg"
+import {Link} from "react-router-dom";
 const SliderSlick = () => {
     const settings = {
         dots: false,
@@ -22,21 +23,21 @@ const SliderSlick = () => {
                     <img className="sliderImg" src={slider1} alt="slider"/>
                     <div className="desc-slider">
                         <p>Новые рецепты!</p>
-                        <a href="">Смотреть</a>
+                        <Link to="/">Смотреть</Link>
                     </div>
                 </div>
                 <div>
                     <img className="sliderImg" src={slider2} alt="slider"/>
                     <div className="desc-slider">
                         <p>Новые рецепты!</p>
-                        <a href="">Смотреть</a>
+                        <Link to="/">Смотреть</Link>
                     </div>
                 </div>
                 <div>
                     <img className="sliderImg" src={slider3} alt="slider"/>
                     <div className="desc-slider">
                         <p className="black">Самая вкусная пицца за 15 минут!</p>
-                        <a className="black" href="">Смотреть</a>
+                        <Link to="/" className="black">Смотреть</Link>
                     </div>
                 </div>
             </Slider>

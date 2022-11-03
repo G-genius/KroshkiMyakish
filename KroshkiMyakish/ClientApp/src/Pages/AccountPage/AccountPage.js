@@ -40,7 +40,7 @@ const AccountPage = () => {
                         </div>
                     </div>
                     <div className="change_info">
-                        <a onClick={OpenEditPage}>Редактировать профиль</a>
+                        <p onClick={OpenEditPage}>Редактировать профиль</p>
                     </div>
                 </div>
             </div>

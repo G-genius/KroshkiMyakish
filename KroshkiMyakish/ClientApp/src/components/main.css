@@ -1,5 +1,14 @@
-.main {
+.Main {
     display: flex;
+}
+.main-left {
+    margin-top: 100px;
+    padding: 20px;
+}
+.main-recipe-list {
+    display: flex;
+    flex-direction: column;
+    width: 1000px;
 }
 .container {
     max-width: 950px;
@@ -7,14 +16,7 @@
 }
 .left-icon {
     display: flex;
-    /*justify-content: end;*/
-    width: 390px;
-    height: 600px;
-}
-Button {
-    backgroundColor: #509E2F;
-    background: #509E2F;
-    color: #509E2F;
+    width: 420px;
 }
 .button {
     color: #509E2F;
@@ -34,3 +36,4 @@ input, textarea{
     border-radius: 5px;
     border-color: #509E2F;
 }
+

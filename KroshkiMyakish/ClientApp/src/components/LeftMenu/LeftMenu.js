@@ -1,6 +1,5 @@
 import "./LeftMenu.css"
 import React from "react";
-import RecipeList from "../MainMenu/RecipeList/RecipeList";
 import {Link, Outlet} from "react-router-dom";
 const LeftMenu = () => {
     return (

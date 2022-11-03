@@ -5,11 +5,16 @@ import "./main.css"
 import RecipeList from "./MainMenu/RecipeList/RecipeList";
 const Main = () => {
     return (
-        <div>
-            <MainMenu/>
-            <div className="main">
+        <div className="Main">
+
+            <div className="main-left">
                 <LeftMenu/>
+            </div>
+            <div className="main-recipe-list">
+                <MainMenu/>
                 <RecipeList/>
+            </div>
+            <div>
                 <img className="left-icon" src={rightIcon} alt="left-icon"/>
             </div>
         </div>

@@ -1,13 +1,15 @@
 .recipeList {
     display: flex;
     justify-content: center;
+    align-items: center;
+    margin: 0 auto;
 }
 .recipe-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     flex-flow: row wrap;
-
+    justify-content: center;
 }
 .list-item {
     display: flex;
