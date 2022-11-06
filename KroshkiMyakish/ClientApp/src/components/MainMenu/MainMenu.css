@@ -9,9 +9,14 @@
 .main-menu p {
     margin: 0 auto;
     display: flex;
-    color: #509E2F;
     font-weight: bold;
     cursor: pointer;
+    text-decoration: none;
+    color: #509E2F;
+}
+.main-menu a {
+    color: #509E2F;
+    text-decoration: none;
 }
 .menu-line img {
     display: flex;

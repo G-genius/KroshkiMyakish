@@ -9,7 +9,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     flex-flow: row wrap;
-    justify-content: center;
+    margin-left: 10px;
 }
 .list-item {
     display: flex;
