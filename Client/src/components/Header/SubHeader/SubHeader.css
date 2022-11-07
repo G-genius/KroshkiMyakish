@@ -22,11 +22,17 @@
     margin: 0 auto;
 }
 .category {
+    display: flex;
     border: 1px solid #D9D9D9;
     border-radius: 15px;
     padding-left: 10px;
     padding-right: 10px;
     cursor: pointer;
+    align-items: center;
+}
+.category a {
+    color: #509E2F;
+    font-weight: bold;
 }
 .inputSearch {
     display: flex;

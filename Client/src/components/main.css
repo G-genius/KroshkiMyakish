@@ -36,4 +36,7 @@ input, textarea{
     border-radius: 5px;
     border-color: #509E2F;
 }
+input {
+    height: 25px;
+}
 

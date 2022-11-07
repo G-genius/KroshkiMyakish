@@ -9,12 +9,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     flex-flow: row wrap;
-    margin-left: 10px;
+    margin-left: 20px;
 }
 .list-item {
     display: flex;
     flex-direction: column;
-    padding: 20px;
+    padding: 15px;
     cursor: pointer;
 }
 .list-item img {
