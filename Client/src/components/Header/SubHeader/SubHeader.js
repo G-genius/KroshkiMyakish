@@ -15,12 +15,16 @@ const SubHeader = () => {
         navigate("/account")
         window.scrollBy(0, -10000)
     }
+    const OpenRecipeList = () => {
+        navigate("/recipes")
+        window.scrollBy(0, -10000)
+    }
 
     return (
         <div className="sub-header">
             <img className="logo" onClick={OpenMainPage} src={logo} alt={logo}/>
             <div className="search">
-                <div className="category">
+                <div className="category" onClick={OpenRecipeList}>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a>Все категории</a>
                     <img className="arrow" src={arrow} alt={arrow}/>

@@ -4,6 +4,7 @@ import rightIcon from "../img/MainMenu/rightIcon.png";
 import "./main.css"
 import RecipeList from "./MainMenu/RecipeList/RecipeList";
 const Main = () => {
+
     return (
         <div className="Main">
 
