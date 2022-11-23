@@ -9,6 +9,7 @@
     display: flex;
     padding-top: 20px;
     width: 100%;
+    align-items: center;
 }
 .add_recipe_form p {
     width: 200px;
@@ -30,4 +31,7 @@ textarea {
 }
 .button-add-recipe {
     margin: 10px 10px 10px 10px;
+}
+.ql-editor {
+    min-height: 350px;
 }

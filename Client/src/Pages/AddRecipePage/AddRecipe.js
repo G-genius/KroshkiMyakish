@@ -3,8 +3,32 @@ import FileBase64 from 'react-filebase64';
 import Header from "../../components/Header/Header";
 import Footer from "../../components/Footer/Footer";
 import {Checkbox} from "@mui/material";
+import ReactQuill from "react-quill";
+import 'react-quill/dist/quill.snow.css';
+import {useState} from "react";
+import App from "../../App";
 
 const AddRecipe = () => {
+    const [quill, setQuill] = useState("")
+    const handleQuill = (e) => {
+        console.log(e)
+        setQuill(e)
+    }
+    App.modules = {
+        toolbar: [
+            [{ 'header': [1, 2, false] }],
+            ['bold', 'italic', 'underline', 'blockquote'],
+            [{'list': 'ordered'}, {'list': 'bullet'}, {'indent': '-1'}, {'indent': '+1'}],
+            ['link', 'image']
+        ],
+
+    }
+    App.formats = [
+        'header',
+        'bold', 'italic', 'underline', 'strike', 'blockquote',
+        'list', 'bullet', 'indent',
+        'link', 'image'
+    ]
     return (
         <div>
             <Header/>
@@ -65,13 +89,15 @@ const AddRecipe = () => {
                             <input type="number" className="short_input"/>
                         </div>
                     </div>
-                    <div className="add_recipe_form">
-                        <p>Ингридиенты:</p>
-                        <div className="add_recipe_item">
-                            <textarea rows={5} placeholder=" 1 - Мука 1 кг
-                                                            2 - Яйцо 4 шт"/>
-                        </div>
-                    </div>
+                    <ReactQuill
+                        className="quill"
+                        placeholder="Напишите пошагово текст рецепта с добавлением фотографий"
+                        modules={App.modules}
+                        formats={App.formats}
+                        onChange={handleQuill}
+                        value={quill}>
+
+                    </ReactQuill>
                     <div className="add_recipe_form">
                         <p>Видеорецепт <br/>
                             (необязательно):
@@ -81,12 +107,6 @@ const AddRecipe = () => {
                     {/*        <span>Используйте видео в качестве альтернативы</span>*/}
                     {/*        <span>Если Вы хотите вставить видео с Youtube или Rutube,*/}
                     {/*для этого скопируйте и вставьте ссылку на видео в форму.</span>*/}
-                        </div>
-                    </div>
-                    <div className="add_recipe_form">
-                        <p>Текст рецепта:</p>
-                        <div className="add_recipe_item">
-                            <textarea rows={10}/>
                         </div>
                     </div>
                     <div className="button-add-recipe">

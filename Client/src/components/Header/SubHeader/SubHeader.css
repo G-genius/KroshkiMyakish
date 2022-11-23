@@ -1,6 +1,5 @@
 .logo {
-    width: 250px;
-    height: 90px;
+    margin-left: 50px;
     cursor: pointer;
 }
 .sub-header {
@@ -15,9 +14,9 @@
 }
 .search {
     display: flex;
-    width: 726px;
-    height: 44px;
-    border: solid 2px #D9D9D9;
+    width: 727px;
+    height: 45px;
+    border: solid 1px #D9D9D9;
     border-radius: 20px;
     margin: 0 auto;
 }

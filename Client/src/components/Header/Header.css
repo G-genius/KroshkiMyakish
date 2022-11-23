@@ -36,7 +36,8 @@ header {
 }
 .open-pass-btn{
     display: flex;
-    margin-left: -27px;
+    margin-left: 170px;
+    margin-top: -25px;
     cursor: pointer;
 }
 .bottom-btn{

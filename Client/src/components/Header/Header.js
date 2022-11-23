@@ -78,13 +78,13 @@ const Header = () => {
                             <div>
                                 <p className="RegName">Регистрация</p>
                             </div>
-                            <div>
+                            <div className="field">
                                 <p>Ваш номер телефона</p>
                                 <input type="text"/>
                             </div>
                             <div>
                                 <p>Введите пароль</p>
-                                <div className="pass-field">
+                                <div className="pass-field field">
                                     <input id="pass-input" type="password"/>
                                     <img src={showPass} className="open-pass-btn" onClick={OpenPassword}
                                          alt="showPass"/>
@@ -92,7 +92,7 @@ const Header = () => {
                             </div>
                             <div>
                                 <p>Повторите пароль</p>
-                                <div className="pass-field">
+                                <div className="pass-field field">
                                     <input id="pass-input-repeat" type="password"/>
                                     <img src={showPass} className="open-pass-btn" onClick={OpenPassword}
                                          alt="showPass"/>
@@ -114,13 +114,13 @@ const Header = () => {
                             <div>
                                 <p className="RegName">Вход</p>
                             </div>
-                            <div>
+                            <div className="field">
                                 <p>Ваш номер телефона</p>
                                 <input type="text"/>
                             </div>
                             <div>
                                 <p>Введите пароль</p>
-                                <div className="pass-field">
+                                <div className="pass-field field">
                                     <input id="pass-input" type="password"/>
                                 </div>
 

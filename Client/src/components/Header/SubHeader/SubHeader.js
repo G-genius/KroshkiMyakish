@@ -22,7 +22,8 @@ const SubHeader = () => {
 
     return (
         <div className="sub-header">
-            <img className="logo" onClick={OpenMainPage} src={logo} alt={logo}/>
+            {/*<img className="logo" onClick={OpenMainPage} src={logo} alt={logo}/>*/}
+            <h1 className="logo" onClick={OpenMainPage}>Food Craft</h1>
             <div className="search">
                 <div className="category" onClick={OpenRecipeList}>
                     {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
