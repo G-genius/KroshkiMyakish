@@ -111,7 +111,6 @@ const AddRecipe = () => {
                     </div>
                     <div className="button-add-recipe">
                         <Checkbox/>
-                        {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                         <span> - Я согласен с <a href="">условиями размещения</a></span>
                     </div>
                     <div className="add_recipe_form">

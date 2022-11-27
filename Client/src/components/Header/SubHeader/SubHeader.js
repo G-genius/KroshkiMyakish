@@ -26,7 +26,6 @@ const SubHeader = () => {
             <h1 className="logo" onClick={OpenMainPage}>Food Craft</h1>
             <div className="search">
                 <div className="category" onClick={OpenRecipeList}>
-                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                     <a>Все категории</a>
                     <img className="arrow" src={arrow} alt={arrow}/>
                 </div>
@@ -39,7 +38,6 @@ const SubHeader = () => {
             </div>
 
             <div className="user">
-                {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
                 <Link to="/add-recipe" className="add-recipe">Добавить рецепт</Link>
                 <img className="user-icon" src={userIcon} alt={userIcon} onClick={OpenAccountPage}/>
             </div>
