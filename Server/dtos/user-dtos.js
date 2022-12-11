@@ -4,7 +4,7 @@ module.exports = class UserDto {
     isActivated;
 
     constructor(model) {
-        this.model = model.email
+        this.email = model.email
         this.id = model._id
         this.isActivated = model.isActivated
     }

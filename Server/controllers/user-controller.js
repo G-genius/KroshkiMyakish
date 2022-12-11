@@ -1,4 +1,3 @@
-const {json} = require("express");
 const userService = require('../service/user-service')
 
 class UserController {
@@ -6,11 +5,11 @@ class UserController {
         try {
             const {email, password} = req.body
             const userData = await userService.registration(email, password)
-            res.cookie('refreshToken', userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true, secure: true})
+            res.cookie('refreshToken', userData.refreshToken, {maxAge: 30 * 24 * 60 * 60 * 1000, httpOnly: true}) //, secure: true
 
             return res.json(userData)
         } catch (e) {
-            
+            console.log(e)
         }
     }
 
