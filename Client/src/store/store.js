@@ -1,4 +1,7 @@
 import AuthService from "../services/AuthService";
+import axios from "axios";
+import {API_URL} from "../http";
+import type {AuthResponse} from "../models/response/AuthResponse";
 
 export default class Store {
     user = {}
@@ -40,12 +43,24 @@ export default class Store {
         }
     }
 
-    async logout(email, password) {
+    async logout() {
         try {
             const response = await AuthService.logout()
             localStorage.setItem('token')
             this.setAuth(false)
             this.setUser({})
+        } catch (e) {
+            console.log(e.response?.data?.message)
+        }
+    }
+
+    async checkAuth() {
+        try {
+            const response = await axios.get<AuthResponse>(`${API_URL}/refresh`, {withCredentials: true})
+            console.log(response);
+            localStorage.setItem('token', response.data.accessToken);
+            this.setAuth(true);
+            this.setUser(response.data.user);
         } catch (e) {
             console.log(e.response?.data?.message)
         }

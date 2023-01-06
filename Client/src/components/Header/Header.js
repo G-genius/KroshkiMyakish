@@ -4,8 +4,14 @@ import logIcon from "../../img/header/log.svg"
 import "./Modal.css"
 import showPass from "../../img/header/show-pass.svg"
 import SubHeader from "./SubHeader/SubHeader";
+import React, {useContext, useState} from "react";
+import {Context} from "../../index";
 
 const Header = () => {
+
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const {store} = useContext(Context)
 
     // Когда пользователь нажимает кнопку "зарегистрироваться"
     const OpenReg = () => {
@@ -79,13 +85,23 @@ const Header = () => {
                                 <p className="RegName">Регистрация</p>
                             </div>
                             <div className="field">
-                                <p>Ваш номер телефона</p>
-                                <input type="text"/>
+                                <p>Ваш email</p>
+                                <input
+                                    onChange={e => setEmail(e.target.value)}
+                                    value={email}
+                                    type="text"
+                                    placeholder="Email"
+                                />
                             </div>
                             <div>
                                 <p>Введите пароль</p>
                                 <div className="pass-field field">
-                                    <input id="pass-input" type="password"/>
+                                    <input
+                                        onChange={e => setPassword(e.target.value)}
+                                        value={password}
+                                        type="password"
+                                        placeholder="password"
+                                    />
                                     <img src={showPass} className="open-pass-btn" onClick={OpenPassword}
                                          alt="showPass"/>
                                 </div>
@@ -99,7 +115,7 @@ const Header = () => {
                                 </div>
                             </div>
                             <div>
-                                <button className="regBtn">Зарегистрироваться</button>
+                                <button onClick={() => store.registration(email, password)}>Регистрация</button>
                             </div>
                             <div>
                                 <p className="bottom-btn" onClick={OpenNotReg}>Уже есть аккаунт? Войти</p>
@@ -115,18 +131,28 @@ const Header = () => {
                                 <p className="RegName">Вход</p>
                             </div>
                             <div className="field">
-                                <p>Ваш номер телефона</p>
-                                <input type="text"/>
+                                <p>Ваш email</p>
+                                <input
+                                    onChange={e => setEmail(e.target.value)}
+                                    value={email}
+                                    type="text"
+                                    placeholder="Email"
+                                />
                             </div>
                             <div>
                                 <p>Введите пароль</p>
                                 <div className="pass-field field">
-                                    <input id="pass-input" type="password"/>
+                                    <input
+                                        onChange={e => setPassword(e.target.value)}
+                                        value={password}
+                                        type="password"
+                                        placeholder="password"
+                                    />
                                 </div>
 
                             </div>
                             <div>
-                                <button className="regBtn">Войти</button>
+                                <button onClick={() => store.login(email, password)}>Логин</button>
                             </div>
                             <div>
                                 <p className="bottom-btn" onClick={OpenNotReg}>Нет аккаунта? Зарегистрироваться</p>

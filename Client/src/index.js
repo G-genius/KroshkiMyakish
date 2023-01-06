@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
 import Store from "./store/store";
-import Form from "./components/Form";
 
 const baseUrl = document.getElementsByTagName('base')[0].getAttribute('href');
 const rootElement = document.getElementById('root');
@@ -25,7 +24,6 @@ root.render(
           store
       }}>
           <App />
-          <Form/>
       </Context.Provider>,
   </BrowserRouter>);
 
