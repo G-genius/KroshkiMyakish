@@ -4,8 +4,9 @@ import logIcon from "../../img/header/log.svg"
 import "./Modal.css"
 import showPass from "../../img/header/show-pass.svg"
 import SubHeader from "./SubHeader/SubHeader";
-import React, {useContext, useState} from "react";
+import React, {useContext, useEffect, useState} from "react";
 import {Context} from "../../index";
+import Form from "../Form";
 
 const Header = () => {
 
@@ -68,9 +69,24 @@ const Header = () => {
         }
     }
 
+    const token = localStorage.getItem('token')
+    useEffect(() => {
+        if (token) {
+            store.checkAuth()
+        }
+    }, [token])
+
+    if (!store.isAuth) {
+        return (
+            <Form/>
+        );
+    }
+
     return (
         <div className="header">
             <header>
+                <h5>{store.isAuth ? `Пользователь авторизован ${store.user.email}` : `Авторизуйтесь!!!`}</h5>
+                <button onClick={() => store.logout()}>Выйти</button>
                 <div className="menu-btn">
                     <ul className="menu">
                         <li className="register" onClick={OpenReg}><img src={regIcon} alt={regIcon}/> Регистрация</li>

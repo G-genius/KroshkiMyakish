@@ -1,4 +1,4 @@
-import $api from "../http";
+import $api, {API_URL} from "../http";
 import {AxiosResponse} from 'axios'
 import type {AuthResponse} from "../models/response/AuthResponse";
 
@@ -13,5 +13,9 @@ export default class AuthService {
 
     static async logout(): Promise<void> {
         return $api.post('/logout')
+    }
+
+    static async refresh(refreshToken): Promise<AxiosResponse<AuthResponse>> {
+        return $api.get(`${API_URL}/refresh`, {withCredentials: true})
     }
 }

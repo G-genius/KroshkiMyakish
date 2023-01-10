@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component, useContext} from 'react';
 import {Route, Routes} from 'react-router-dom';
 import { Layout } from './Pages/Layout';
 import './custom.css';
@@ -15,6 +15,7 @@ import Vypeshka from "./Pages/Recipes/Vypeshka/Vypeshka";
 import Dessert from "./Pages/Recipes/Dessert/Dessert";
 import Sousy from "./Pages/Recipes/Sousy/Sousy";
 import Napitki from "./Pages/Recipes/Napitki/Napitki";
+import {Context} from "./index";
 
 export default class App extends Component {
   static displayName = App.name;
