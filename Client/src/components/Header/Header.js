@@ -13,6 +13,7 @@ const Header = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const {store} = useContext(Context)
+    const menuBtn = document.getElementsByClassName('menu-btn')
 
     // Когда пользователь нажимает кнопку "зарегистрироваться"
     const OpenReg = () => {
@@ -74,13 +75,13 @@ const Header = () => {
         if (token) {
             store.checkAuth()
         }
+
     }, [token])
 
-    if (!store.isAuth) {
-        return (
-            <Form/>
-        );
-    }
+
+
+
+
 
     return (
         <div className="header">

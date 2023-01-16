@@ -1,11 +1,6 @@
 import AuthService from "../services/AuthService";
-import axios from "axios";
-import {API_URL} from "../http";
-import type {AuthResponse} from "../models/response/AuthResponse";
 
 export default class Store {
-    user = {}
-    isAuth = true
     isLoading = false
 
     // constructor() {
@@ -31,6 +26,7 @@ export default class Store {
             localStorage.setItem('token', response.data.accessToken)
             this.setAuth(true)
             this.setUser(response.data.user)
+            window.location.reload()
         } catch (e) {
             console.log(e.response?.data?.message)
         }
@@ -43,6 +39,7 @@ export default class Store {
             localStorage.setItem('token', response.data.accessToken)
             this.setAuth(true)
             this.setUser(response.data.user)
+            window.location.reload()
         } catch (e) {
             console.log(e.response?.data?.message)
         }
