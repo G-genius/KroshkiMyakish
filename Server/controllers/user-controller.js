@@ -70,6 +70,15 @@ class UserController {
         }
     }
 
+    async getAccount(req, res, next) {
+        try {
+            const user = await userService.getAccount()
+            return res.json(user)
+        } catch (e) {
+            next(e)
+        }
+    }
+
 
 }
 

@@ -77,6 +77,11 @@ class UserService {
         const users = await UserModel.find()
         return users
     }
+
+    async getAccount() {
+        const users = await UserModel.findOne()
+        return users
+    }
 }
 
 module.exports = new UserService()
