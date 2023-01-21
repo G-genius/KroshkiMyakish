@@ -33,9 +33,9 @@ const Footer = () => {
                 </div>
                 <div className="third-block">
                     <p>Мы в соц-сетях:</p>
-                    <a><SocialIcon network="vk" bgColor="#509E2F"/></a>
-                    <a><SocialIcon network="google" bgColor="#509E2F"/></a>
-                    <a><SocialIcon network="whatsapp" bgColor="#509E2F"/></a>
+                    <SocialIcon network="vk" bgColor="#509E2F"/>
+                    <SocialIcon network="google" bgColor="#509E2F"/>
+                    <SocialIcon network="whatsapp" bgColor="#509E2F"/>
                 </div>
             </div>
         </footer>

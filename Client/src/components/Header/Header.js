@@ -4,7 +4,7 @@ import logIcon from "../../img/header/log.svg"
 import "./Modal.css"
 import showPass from "../../img/header/show-pass.svg"
 import SubHeader from "./SubHeader/SubHeader";
-import React, {useContext, useEffect, useState} from "react";
+import React, {useContext, useEffect, useReducer, useState} from "react";
 import {Context} from "../../index";
 import Form from "../Form";
 
@@ -13,12 +13,13 @@ const Header = () => {
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const {store} = useContext(Context)
-    const menuBtn = document.getElementsByClassName('menu-btn')
 
+    const [_, forceUpdate] = useReducer((x) => x + 1, 0);
     // Когда пользователь нажимает кнопку "зарегистрироваться"
     const OpenReg = () => {
         let modelReg = document.getElementById("regModal")
         modelReg.style.display = "block";
+
     }
 
     // Когда пользователь нажимает кнопку "войти"
@@ -75,11 +76,16 @@ const Header = () => {
         if (token) {
             store.checkAuth()
         }
-
     }, [token])
 
 
-
+    setTimeout(() => {
+        let menuBtn = document.getElementById('btn-menu')
+        if (store.isAuth) {
+            menuBtn.style.display = "none"
+        }
+        forceUpdate()
+    }, 1)
 
 
 
@@ -90,7 +96,7 @@ const Header = () => {
             <header>
                 <h5>{store.isAuth ? `Пользователь авторизован ${store.user.email}` : `Авторизуйтесь!!!`}</h5>
                 <button onClick={() => store.logout()}>Выйти</button>
-                <div className="menu-btn">
+                <div className="menu-btn" id="btn-menu">
                     <ul className="menu">
                         <li className="register" onClick={OpenReg}><img src={regIcon} alt={regIcon}/> Регистрация</li>
                         <li className="login" onClick={OpenLog}><img src={logIcon} alt={logIcon}/> Вход</li>
@@ -121,16 +127,16 @@ const Header = () => {
                                         type="password"
                                         placeholder="password"
                                     />
-                                    <img src={showPass} className="open-pass-btn" onClick={OpenPassword}
-                                         alt="showPass"/>
+                                    {/*<img src={showPass} className="open-pass-btn" onClick={OpenPassword}*/}
+                                    {/*     alt="showPass"/>*/}
                                 </div>
                             </div>
                             <div>
                                 <p>Повторите пароль</p>
                                 <div className="pass-field field">
                                     <input id="pass-input-repeat" type="password"/>
-                                    <img src={showPass} className="open-pass-btn" onClick={OpenPassword}
-                                         alt="showPass"/>
+                                    {/*<img src={showPass} className="open-pass-btn" onClick={OpenPassword}*/}
+                                    {/*     alt="showPass"/>*/}
                                 </div>
                             </div>
                             <div>
