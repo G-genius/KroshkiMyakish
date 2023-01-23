@@ -2,17 +2,16 @@ import "./Header.css"
 import regIcon from "../../img/header/reg.svg"
 import logIcon from "../../img/header/log.svg"
 import "./Modal.css"
-import showPass from "../../img/header/show-pass.svg"
 import SubHeader from "./SubHeader/SubHeader";
 import React, {useContext, useEffect, useReducer, useState} from "react";
 import {Context} from "../../index";
-import Form from "../Form";
 
 const Header = () => {
 
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
     const {store} = useContext(Context)
+
 
     const [_, forceUpdate] = useReducer((x) => x + 1, 0);
     // Когда пользователь нажимает кнопку "зарегистрироваться"
@@ -80,12 +79,14 @@ const Header = () => {
 
 
     setTimeout(() => {
+        forceUpdate()
         let menuBtn = document.getElementById('btn-menu')
         if (store.isAuth) {
             menuBtn.style.display = "none"
         }
-        forceUpdate()
     }, 1)
+
+
 
 
 

@@ -14,6 +14,5 @@ router.get('/activate/:link', userController.activate)
 router.get('/refresh', userController.refresh)
 router.get('/users', authMiddleware, userController.getUsers)
 router.get('/account', userController.getAccount)
-//добавить recipeController
 
 module.exports = router
