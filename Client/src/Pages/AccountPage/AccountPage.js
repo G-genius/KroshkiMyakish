@@ -26,6 +26,12 @@ const AccountPage = () => {
         }
     }
 
+    async function logout() {
+        store.logout()
+        navigate("/")
+        window.location.reload()
+    }
+
     return (
         <div>
             <Header/>
@@ -42,7 +48,7 @@ const AccountPage = () => {
                             <img src={UserLogo} alt="user-logo"/>
                             <div className="user_locate">
                                 <h1 className="user_name">{store.user.email}</h1>
-                                <span>Страна, город</span>
+                                <span>{store.user.city}</span>
                             </div>
                         </div>
                         <div className="account-block">
@@ -57,10 +63,16 @@ const AccountPage = () => {
                         <div className="account-block">
                             <span>Добавлено рецептов: {}</span>
                         </div>
+
                     </div>
                     <div className="change_info">
                         <p onClick={OpenEditPage}>Редактировать профиль</p>
                     </div>
+
+
+                </div>
+                <div className="logout">
+                    <button onClick={logout}>Выйти</button>
                 </div>
             </div>
             <Footer/>

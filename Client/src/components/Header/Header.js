@@ -5,10 +5,12 @@ import "./Modal.css"
 import SubHeader from "./SubHeader/SubHeader";
 import React, {useContext, useEffect, useReducer, useState} from "react";
 import {Context} from "../../index";
+import {useNavigate} from "react-router-dom";
 
 const Header = () => {
 
     const [email, setEmail] = useState('')
+    const [city, setCity] = useState('')
     const [password, setPassword] = useState('')
     const {store} = useContext(Context)
 
@@ -86,17 +88,17 @@ const Header = () => {
         }
     }, 1)
 
+    const logout = () => {
 
+        window.location.reload()
 
-
-
-
+    }
 
     return (
         <div className="header">
             <header>
                 <h5>{store.isAuth ? `Пользователь авторизован ${store.user.email}` : `Авторизуйтесь!!!`}</h5>
-                <button onClick={() => store.logout()}>Выйти</button>
+
                 <div className="menu-btn" id="btn-menu">
                     <ul className="menu">
                         <li className="register" onClick={OpenReg}><img src={regIcon} alt={regIcon}/> Регистрация</li>
@@ -107,6 +109,7 @@ const Header = () => {
                     <div className="modal-content">
                         <span className="close" onClick={Close}>&times;</span>
                         <div className="field-form">
+                            {/*РЕГИСТРАЦИЯ*/}
                             <div>
                                 <p className="RegName">Регистрация</p>
                             </div>
@@ -117,6 +120,15 @@ const Header = () => {
                                     value={email}
                                     type="text"
                                     placeholder="Email"
+                                />
+                            </div>
+                            <div className="field">
+                                <p>Ввдите ваш город</p>
+                                <input
+                                    onChange={e => setCity(e.target.value)}
+                                    value={city}
+                                    type="text"
+                                    placeholder="Город"
                                 />
                             </div>
                             <div>
@@ -141,7 +153,7 @@ const Header = () => {
                                 </div>
                             </div>
                             <div>
-                                <button onClick={() => store.registration(email, password)}>Регистрация</button>
+                                <button className="logoutBtn" onClick={() => store.registration(email, city, password)}>Регистрация</button>
                             </div>
                             <div>
                                 <p className="bottom-btn" onClick={OpenNotReg}>Уже есть аккаунт? Войти</p>
@@ -178,7 +190,7 @@ const Header = () => {
 
                             </div>
                             <div>
-                                <button onClick={() => store.login(email, password)}>Логин</button>
+                                <button className="logoutBtn" onClick={() => store.login(email, password)}>Логин</button>
                             </div>
                             <div>
                                 <p className="bottom-btn" onClick={OpenNotReg}>Нет аккаунта? Зарегистрироваться</p>

@@ -46,6 +46,17 @@ header {
     cursor: pointer;
 }
 
+.logoutBtn {
+    color: #509E2F;
+    margin-top: 10px;
+    border-color: #509E2F;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
 @media screen and (max-width: 720px){
 
     header {

@@ -1,4 +1,5 @@
 import AuthService from "../services/AuthService";
+import {useNavigate} from "react-router-dom";
 
 export default class Store {
     isLoading = false
@@ -19,6 +20,9 @@ export default class Store {
         this.isLoading = bool
     }
 
+
+
+
     async login(email, password) {
         try {
             const response = await AuthService.login(email, password)
@@ -32,9 +36,9 @@ export default class Store {
         }
     }
 
-    async registration(email, password) {
+    async registration(email, city, password) {
         try {
-            const response = await AuthService.registration(email, password)
+            const response = await AuthService.registration(email, city, password)
             console.log(response)
             localStorage.setItem('token', response.data.accessToken)
             this.setAuth(true)
@@ -51,6 +55,7 @@ export default class Store {
             localStorage.setItem('token')
             this.setAuth(false)
             this.setUser({})
+
         } catch (e) {
             console.log(e.response?.data?.message)
         }
