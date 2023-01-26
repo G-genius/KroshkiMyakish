@@ -3,7 +3,8 @@ import MainMenu from "./MainMenu/MainMenu";
 import rightIcon from "../img/MainMenu/rightIcon.png";
 import "./main.css"
 import RecipeList from "./MainMenu/RecipeList/RecipeList";
-import React from 'react';
+import React, {useContext} from 'react';
+import {Context} from "../index";
 
 const Main = () => {
     return (
@@ -11,6 +12,7 @@ const Main = () => {
             <div className="main-left">
                 <LeftMenu/>
             </div>
+
             <div className="main-recipe-list">
                 <MainMenu/>
                 <RecipeList/>

@@ -56,6 +56,10 @@ header {
     cursor: pointer;
 }
 
+.loading {
+    display: block;
+}
+
 
 @media screen and (max-width: 720px){
 

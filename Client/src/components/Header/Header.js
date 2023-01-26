@@ -5,7 +5,6 @@ import "./Modal.css"
 import SubHeader from "./SubHeader/SubHeader";
 import React, {useContext, useEffect, useReducer, useState} from "react";
 import {Context} from "../../index";
-import {useNavigate} from "react-router-dom";
 
 const Header = () => {
 
@@ -94,11 +93,26 @@ const Header = () => {
 
     }
 
+    const Registration = () => {
+        store.registration(email, city, password)
+        Close()
+    }
+
+    const Login = () => {
+        store.login(email, password)
+        Close()
+    }
+
+    if (store.isLoading) {
+        const loading = document.getElementById("loading")
+        loading.style.display = "none"
+    }
+
     return (
         <div className="header">
             <header>
                 <h5>{store.isAuth ? `Пользователь авторизован ${store.user.email}` : `Авторизуйтесь!!!`}</h5>
-
+                <h5 id="loading">Загрузка . . .</h5>
                 <div className="menu-btn" id="btn-menu">
                     <ul className="menu">
                         <li className="register" onClick={OpenReg}><img src={regIcon} alt={regIcon}/> Регистрация</li>
@@ -153,7 +167,7 @@ const Header = () => {
                                 </div>
                             </div>
                             <div>
-                                <button className="logoutBtn" onClick={() => store.registration(email, city, password)}>Регистрация</button>
+                                <button className="logoutBtn" onClick={Registration}>Регистрация</button>
                             </div>
                             <div>
                                 <p className="bottom-btn" onClick={OpenNotReg}>Уже есть аккаунт? Войти</p>
@@ -190,7 +204,7 @@ const Header = () => {
 
                             </div>
                             <div>
-                                <button className="logoutBtn" onClick={() => store.login(email, password)}>Логин</button>
+                                <button className="logoutBtn" onClick={Login}>Логин</button>
                             </div>
                             <div>
                                 <p className="bottom-btn" onClick={OpenNotReg}>Нет аккаунта? Зарегистрироваться</p>

@@ -30,7 +30,7 @@ export default class Store {
             localStorage.setItem('token', response.data.accessToken)
             this.setAuth(true)
             this.setUser(response.data.user)
-            window.location.reload()
+            // window.location.reload()
         } catch (e) {
             console.log(e.response?.data?.message)
         }
@@ -43,7 +43,7 @@ export default class Store {
             localStorage.setItem('token', response.data.accessToken)
             this.setAuth(true)
             this.setUser(response.data.user)
-            window.location.reload()
+
         } catch (e) {
             console.log(e.response?.data?.message)
         }
@@ -62,7 +62,7 @@ export default class Store {
     }
 
     async checkAuth(refreshToken) {
-        // this.setLoading(true)
+        this.setLoading(true)
         try {
             const response = await AuthService.refresh(refreshToken)
             console.log(response);
@@ -73,7 +73,7 @@ export default class Store {
         } catch (e) {
             console.log(e.response?.data?.message);
         } finally {
-            // this.setLoading(false)
+            this.setLoading(false)
         }
     }
 
