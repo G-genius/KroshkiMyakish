@@ -1,9 +1,11 @@
 const UserModel = require('../models/user-model')
+const RecipeModel = require('../models/recipe-model')
 const bcrypt = require('bcrypt')
 const uuid = require('uuid')
 const mailService = require('./mail-service')
 const tokenService = require('./token-service')
 const UserDto = require('../dtos/user-dtos')
+const RecipeDto = require('../dtos/recipe-dtos')
 const ApiError = require('../exceptions/api-error')
 
 class UserService {
@@ -23,6 +25,12 @@ class UserService {
         await tokenService.saveToken(userDto.id, tokens.refreshToken)
 
         return {...tokens, user: userDto}
+    }
+
+    async addRecipe(name, desc) {
+        const recipe = await RecipeModel.create({name, desc})
+        const recipeDto = new RecipeDto(recipe)
+        return {recipe: recipeDto}
     }
 
     async activate(activationLink) {

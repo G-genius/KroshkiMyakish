@@ -20,14 +20,52 @@ const SubHeader = () => {
         window.scrollBy(0, -10000)
     }
 
+    const test = () => {
+        let selector = document.getElementById("selector")
+        let selectedValue = selector.options[selector.selectedIndex].value
+        if (selectedValue === "1") {
+            navigate("/recipes/soups")
+        }
+        else if (selectedValue === "2") {
+            navigate("/recipes/goryachie_bliuda")
+        }
+        else if (selectedValue === "3") {
+            navigate("/recipes/salad")
+        }
+        else if (selectedValue === "4") {
+            navigate("/recipes/zakuski")
+        }
+        else if (selectedValue === "5") {
+            navigate("/recipes/vypechka")
+        }
+        else if (selectedValue === "6") {
+            navigate("/recipes/dessert")
+        }
+        else if (selectedValue === "7") {
+            navigate("/recipes/sousy")
+        }
+        else if (selectedValue === "8") {
+            navigate("/recipes/napitki")
+        }
+    }
+
     return (
         <div className="sub-header">
             {/*<img className="logo" onClick={OpenMainPage} src={logo} alt={logo}/>*/}
             <h1 className="logo" onClick={OpenMainPage}>Food Craft</h1>
             <div className="search">
-                <div className="category" onClick={OpenRecipeList}>
-                    <a>Все категории</a>
-                    <img className="arrow" src={arrow} alt={arrow}/>
+                <div className="category" >
+                    <select id="selector" className="selector" onChange={test} name="Все категории">
+                        <option disabled={true} selected={true} value="0">Выберите категорию</option>
+                        <option value="1">Бульоны и супы</option>
+                        <option value="2">Горячие блюда</option>
+                        <option value="3">Салаты</option>
+                        <option value="4">Закуски</option>
+                        <option value="5">Выпечка</option>
+                        <option value="6">Десерты</option>
+                        <option value="7">Соусы</option>
+                        <option value="8">Напитки</option>
+                    </select>
                 </div>
                 <div className="inputSearch">
                     <input placeholder="Поиск"/>

@@ -17,6 +17,14 @@ class UserController {
             next(e)
         }
     }
+    
+    async addRecipe(req, res, next) {
+        try {
+            const {name, desc} = req.body
+        } catch (e) {
+            
+        }
+    }
 
     async login(req, res, next) {
         try {

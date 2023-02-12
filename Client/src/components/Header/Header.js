@@ -108,10 +108,17 @@ const Header = () => {
         loading.style.display = "none"
     }
 
+    // if (store.user.isActivated) {
+    //     return <div>
+    //         Аккаунт
+    //     </div>
+    // }
+
     return (
         <div className="header">
             <header>
-                <h5>{store.isAuth ? `Пользователь авторизован ${store.user.email}` : `Авторизуйтесь!!!`}</h5>
+                <h5>{store.isAuth ? `Здравствуйте, ${store.user.email}` : `Авторизуйтесь!!!`}</h5>
+
                 <h5 id="loading">Загрузка . . .</h5>
                 <div className="menu-btn" id="btn-menu">
                     <ul className="menu">

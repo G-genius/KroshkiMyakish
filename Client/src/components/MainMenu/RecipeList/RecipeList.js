@@ -7,13 +7,6 @@ const  RecipeList = () => {
                 <ListItem/>
                 <ListItem/>
                 <ListItem/>
-                <ListItem/>
-                <ListItem/>
-                <ListItem/>
-                <ListItem/>
-                <ListItem/>
-                <ListItem/>
-                <ListItem/>
 
 
             </div>
