@@ -16,5 +16,6 @@ router.get('/refresh', userController.refresh)
 router.get('/users', authMiddleware, userController.getUsers)
 router.get('/account', userController.getAccount)
 router.post('/addRecipe', recipeController.addRecipe)
+router.get('/recipes', recipeController.getRecipes)
 
 module.exports = router
