@@ -4,9 +4,13 @@ import arrow from "./../../../img/header/arrow.svg"
 import searchIcon from "../../../img/header/searchIcon.svg"
 import userIcon from "../../../img/header/user.svg"
 import {Link, useNavigate} from "react-router-dom";
+import {useContext, useReducer} from "react";
+import {Context} from "../../../index";
 
 const SubHeader = () => {
     const navigate = useNavigate()
+    const [_, forceUpdate] = useReducer((x) => x + 1, 0);
+    const {store} = useContext(Context)
     const OpenMainPage = () => {
         navigate("/")
         window.scrollBy(0, -10000)
@@ -19,6 +23,14 @@ const SubHeader = () => {
         navigate("/recipes")
         window.scrollBy(0, -10000)
     }
+
+    setTimeout(() => {
+        forceUpdate()
+        let user = document.getElementById('user-board')
+        if (store.isAuth) {
+            user.style.display = "flex"
+        }
+    }, 1)
 
     const test = () => {
         let selector = document.getElementById("selector")
@@ -75,7 +87,7 @@ const SubHeader = () => {
                 </div>
             </div>
 
-            <div className="user">
+            <div className="user" id="user-board">
                 <Link to="/add-recipe" className="add-recipe">Добавить рецепт</Link>
                 <img className="user-icon" src={userIcon} alt={userIcon} onClick={OpenAccountPage}/>
             </div>

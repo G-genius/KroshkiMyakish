@@ -46,18 +46,6 @@ const Header = () => {
         }
     }
 
-    const OpenPassword = () => {
-        let passInput = document.getElementById("pass-input")
-        let passInputRepeat = document.getElementById("pass-input-repeat")
-        if (passInput.type === "password") {
-            passInput.type = "text"
-            passInputRepeat.type = "text"
-        } else {
-            passInput.type = "password"
-            passInputRepeat.type = "password"
-        }
-    }
-
     const OpenNotReg = () => {
         let modelReg = document.getElementById("regModal")
         let modelLog = document.getElementById("logModal")
@@ -85,13 +73,10 @@ const Header = () => {
         if (store.isAuth) {
             menuBtn.style.display = "none"
         }
+        else {
+
+        }
     }, 1)
-
-    const logout = () => {
-
-        window.location.reload()
-
-    }
 
     const Registration = () => {
         store.registration(email, city, password)
@@ -107,12 +92,6 @@ const Header = () => {
         const loading = document.getElementById("loading")
         loading.style.display = "none"
     }
-
-    // if (store.user.isActivated) {
-    //     return <div>
-    //         Аккаунт
-    //     </div>
-    // }
 
     return (
         <div className="header">

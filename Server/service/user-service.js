@@ -27,12 +27,6 @@ class UserService {
         return {...tokens, user: userDto}
     }
 
-    async addRecipe(name, desc) {
-        const recipe = await RecipeModel.create({name, desc})
-        const recipeDto = new RecipeDto(recipe)
-        return {recipe: recipeDto}
-    }
-
     async activate(activationLink) {
         const user = await UserModel.findOne({activationLink})
         if (!user) {
