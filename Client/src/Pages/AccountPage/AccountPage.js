@@ -35,9 +35,7 @@ const AccountPage = () => {
     return (
         <div>
             <Header/>
-            <div>
-                <button onClick={getUsers}>Получить пользователей</button>
-            </div>
+            
             {users.map(user =>
                 <div key={user.email}>{user.email}</div>
             )}
