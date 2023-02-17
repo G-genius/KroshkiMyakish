@@ -5,10 +5,6 @@ const  RecipeList = () => {
         <div className="recipeList">
             <div className="recipe-list">
                 <ListItem/>
-                <ListItem/>
-                <ListItem/>
-
-
             </div>
         </div>
 

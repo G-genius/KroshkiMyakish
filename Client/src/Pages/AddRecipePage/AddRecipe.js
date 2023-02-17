@@ -5,14 +5,25 @@ import Footer from "../../components/Footer/Footer";
 import {Checkbox} from "@mui/material";
 import ReactQuill from "react-quill";
 import 'react-quill/dist/quill.snow.css';
-import {useState} from "react";
+import {useContext, useEffect, useState} from "react";
 import App from "../../App";
+import {Context} from "../../index";
 
 const AddRecipe = () => {
+    const {store} = useContext(Context)
     const [quill, setQuill] = useState("")
+    const [name, setName] = useState('')
+    const [shortDesc, setShortDesc] = useState('')
+    const [mainPhoto, setMainPhoto] = useState('')
+    const [category, setCategory] = useState('')
+    const [time, setTime] = useState(0)
+    const [count, setCount] = useState(0)
+    const [desc, setDesc] = useState('')
+    const [video, setVideo] = useState('')
     const handleQuill = (e) => {
         console.log(e)
-        setQuill(e)
+
+        setDesc(e)
     }
     App.modules = {
         toolbar: [
@@ -29,6 +40,13 @@ const AddRecipe = () => {
         'list', 'bullet', 'indent',
         'link', 'image'
     ]
+
+    const addRecipe = () => {
+        store.addRecipe(name, shortDesc, mainPhoto, category, time, desc, video, count)
+    }
+    const updateMainPhoto = async (base64) => {
+        setMainPhoto(base64[0].base64)
+    }
     return (
         <div>
             <Header/>
@@ -38,13 +56,21 @@ const AddRecipe = () => {
                     <div className="add_recipe_form">
                         <p>Название рецепта:</p>
                         <div className="add_recipe_item">
-                            <input className="big_input" type="text"/>
+                            <input className="big_input"
+                                   type="text"
+                                   value={name}
+                                   onChange={e => setName(e.target.value)}
+                            />
                         </div>
                     </div>
                     <div className="add_recipe_form">
                         <p>Краткое описание:</p>
                         <div className="add_recipe_item">
-                            <textarea maxLength={100}/>
+                            <textarea
+                                maxLength={100}
+                                value={shortDesc}
+                                onChange={e => setShortDesc(e.target.value)}
+                            />
                             <br/>
                         {/*    <span>*/}
                         {/*    Обязательно напишите 2-3 строки - что это за блюдо, его особенности, вкусовые качества.*/}
@@ -57,36 +83,52 @@ const AddRecipe = () => {
                     <div className="add_recipe_form">
                         <p>Основное фото:</p>
                         <div className="add_recipe_item">
-                            <FileBase64/>
+                            <FileBase64
+                                multiple={ true }
+                                onDone={ updateMainPhoto } />
+                            {/*<input*/}
+                            {/*    value={mainPhoto}*/}
+                            {/*    onChange={e => setMainPhoto(e.target.value)}*/}
+                            {/*/>*/}
                         </div>
                     </div>
                     <div className="add_recipe_form">
                         <p>Рубрика:</p>
                         <div className="add_recipe_item">
-                            <select>
+                            <select onChange={e => setCategory(e.target.value)}>
                                 <option>--выберите рубрику--</option>
-                                <option>Бульоны и супы</option>
-                                <option>Горячие блюда</option>
-                                <option>Салаты</option>
-                                <option>Закуски</option>
-                                <option>Выпечка</option>
-                                <option>Десерты</option>
-                                <option>Соусы</option>
-                                <option>Домашние напитки</option>
+                                <option value="Бульоны и супы">Бульоны и супы</option>
+                                <option value="Горячие блюда">Горячие блюда</option>
+                                <option value="Салаты">Салаты</option>
+                                <option value="Закуски">Закуски</option>
+                                <option value="Выпечка">Выпечка</option>
+                                <option value="Десерты">Десерты</option>
+                                <option value="Соусы">Соусы</option>
+                                <option value="Домашние напитки">Домашние напитки</option>
                             </select>
                         </div>
                     </div>
                     <div className="add_recipe_form">
                         <p>Время приготовления:</p>
                         <div className="add_recipe_item">
-                            <input type="number" className="short_input"/>
+                            <input
+                                type="number"
+                                className="short_input"
+                                value={time}
+                                onChange={e => setTime(e.target.value)}
+                            />
                             <span>(минут)</span>
                         </div>
                     </div>
                     <div className="add_recipe_form">
                         <p>Количество порций:</p>
                         <div className="add_recipe_item">
-                            <input type="number" className="short_input"/>
+                            <input
+                                type="number"
+                                className="short_input"
+                                value={count}
+                                onChange={e => setCount(e.target.value)}
+                            />
                         </div>
                     </div>
                     <ReactQuill
@@ -95,7 +137,8 @@ const AddRecipe = () => {
                         modules={App.modules}
                         formats={App.formats}
                         onChange={handleQuill}
-                        value={quill}>
+                        value={desc}
+                    >
 
                     </ReactQuill>
                     <div className="add_recipe_form">
@@ -103,10 +146,15 @@ const AddRecipe = () => {
                             (необязательно):
                         </p>
                         <div className="add_recipe_item">
-                            <input className="big_input" placeholder="https://www.youtube.com/watch?v=BzI9SwOmvKs" type="text"/>
-                    {/*        <span>Используйте видео в качестве альтернативы</span>*/}
-                    {/*        <span>Если Вы хотите вставить видео с Youtube или Rutube,*/}
-                    {/*для этого скопируйте и вставьте ссылку на видео в форму.</span>*/}
+                            <input className="big_input" placeholder="https://www.youtube.com/watch?v=BzI9SwOmvKs"
+                                   type="text"
+                                   value={video}
+                                   onChange={e => setVideo(e.target.value)}
+                            />
+                            <span>Используйте видео в качестве альтернативы.</span>
+                            <br/>
+                            <span>Если вы хотите вставить видео с Youtube или Rutube,
+                    для этого скопируйте и вставьте ссылку на видео в форму.</span>
                         </div>
                     </div>
                     <div className="button-add-recipe">
@@ -114,7 +162,7 @@ const AddRecipe = () => {
                         <span> - Я согласен с <a href="">условиями размещения</a></span>
                     </div>
                     <div className="add_recipe_form">
-                        <button className="button button-add-recipe" >Опубликовать</button>
+                        <button className="button button-add-recipe" onClick={addRecipe}>Опубликовать</button>
                     </div>
                 </div>
             </div>

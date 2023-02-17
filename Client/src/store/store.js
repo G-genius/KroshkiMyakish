@@ -1,5 +1,6 @@
 import AuthService from "../services/AuthService";
 import {useNavigate} from "react-router-dom";
+import RecipeService from "../services/RecipeService";
 
 export default class Store {
     isLoading = false
@@ -14,6 +15,10 @@ export default class Store {
 
     setUser(user) {
         this.user = user
+    }
+
+    setRecipe(recipe) {
+        this.recipe = recipe
     }
 
     setLoading(bool) {
@@ -74,6 +79,17 @@ export default class Store {
             console.log(e.response?.data?.message);
         } finally {
             this.setLoading(false)
+        }
+    }
+
+    async addRecipe(name, shortDesc, mainPhoto, category, time, desc, video, count) {
+        try {
+            const response = await RecipeService.addRecipe(name, shortDesc, mainPhoto, category, time, desc, video, count)
+            console.log(response)
+            this.setRecipe(response.data.recipe)
+
+        } catch (e) {
+            console.log(e.response?.data?.message)
         }
     }
 
