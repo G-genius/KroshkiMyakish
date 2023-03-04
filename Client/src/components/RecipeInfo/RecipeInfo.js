@@ -7,58 +7,53 @@ import RecipeService from "../../services/RecipeService";
 
 const RecipeInfo = () => {
     const [recipes, setRecipes] = useState([]);
-    async function getRecipes() {
+
+    //console.log(recipes)
+    async function getRecipe() {
+
         try {
-            const response = await RecipeService.getRecipes();
+            const recipeId = window.location.href.split("/")[4]
+            const response = await RecipeService.getRecipe();
             setRecipes(response.data);
+            //console.log(recipeId)
         } catch (e) {
             console.log(e);
         }
     }
-    getRecipes()
+    getRecipe()
     let stringToHTML = function (str) {
         let dom = document.createElement('recipe_text');
         dom.innerHTML = str;
         return dom;
 
     };
-    // console.log(stringToHTML(recipes.map(recipe => recipe.desc)));
+    //console.log(stringToHTML(recipes.map(recipe => recipe.desc)));
+
     return (
         <div className="recipe_info">
             <Header/>
             <div className="container">
-                {recipes.map(recipe =>
                 <div className="recipe_info_item">
                     <div className="recipe_category">
                         <p>Название рубрики</p>
                     </div>
                     <div className="recipe_name">
-                        <h1>{recipe.name}</h1>
+                        <h1>{recipes.name}</h1>
                     </div>
                     <div className="recipe_main_image">
-                        <img src={recipe.mainPhoto} alt="dish1" width={200}/>
+                        <img src={recipes.mainPhoto} alt="dish1" width={200}/>
                     </div>
                     <div className="recipe_time_count">
-                        <span>{recipe.time}мин.</span>
-                        <span>кол-во порций - {recipe.count}</span>
+                        <span>{recipes.time}мин.</span>
+                        <span>кол-во порций - {recipes.count}</span>
                     </div>
                     <div className="recipe_short_info">
-                        <h2>{recipe.shortDesc}</h2>
+                        <h2>{recipes.shortDesc}</h2>
                     </div>
-                    {/*<div className="recipe_ingredients">*/}
-                    {/*    <p>Ингридиенты</p>s*/}
-                    {/*    <span>*/}
-                    {/*        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, unde.<br/>*/}
-                    {/*        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, unde.<br/>*/}
-                    {/*        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, unde.<br/>*/}
-                    {/*        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam, unde.<br/>*/}
-                    {/*    </span>*/}
-                    {/*</div>*/}
                     <div className="recipe_text">
-                        <h1>{(recipe.desc).innerHTML}</h1>
+                        <h1>{(recipes.desc)}</h1>
                     </div>
                 </div>
-                )}
             </div>
             <Footer/>
         </div>

@@ -17,5 +17,6 @@ router.get('/users', authMiddleware, userController.getUsers)
 router.get('/account', userController.getAccount)
 router.post('/addRecipe', recipeController.addRecipe)
 router.get('/recipes', recipeController.getRecipes)
+router.get('/recipe/:id', recipeController.getRecipe)
 
 module.exports = router

@@ -1,7 +1,5 @@
 const RecipeModel = require('../models/recipe-model')
 const RecipeDto = require('../dtos/recipe-dtos')
-const tokenService = require("./token-service");
-const UserModel = require("../models/user-model");
 
 class RecipeService {
     async addRecipe(name, shortDesc, mainPhoto, category, time, desc, video, count) {
@@ -11,6 +9,10 @@ class RecipeService {
     }
     async getAllRecipes() {
         const recipes = await RecipeModel.find()
+        return recipes
+    }
+    async getRecipe() {
+        const recipes = await RecipeModel.findOne({_id: "63efe20ef33641c530e2c55c"})
         return recipes
     }
 }

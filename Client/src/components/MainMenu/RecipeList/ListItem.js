@@ -30,7 +30,7 @@ const ListItem = () => {
         <div className="list-item">
             {recipes.map(recipe =>
                 <div className="recipe-item">
-                    <Link to="/recipe/1" className="link" onClick={OpenRecipe}>
+                    <Link to={"/recipe/"+recipe._id} className="link" onClick={OpenRecipe}>
                         <img src={recipe.mainPhoto} alt="dish1"/>
                         <p>{recipe.name}</p>
                         <div className="recipe-bottom-list">
