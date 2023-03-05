@@ -5,7 +5,6 @@ const Soups = () => {
         <div>
             <div className="container">
                 <h1>Бульоны и супы</h1>
-                <ListItem/>
             </div>
         </div>
     )

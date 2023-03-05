@@ -67,7 +67,7 @@ const SubHeader = () => {
             <h1 className="logo" onClick={OpenMainPage}>Food Craft</h1>
             <div className="search">
                 <div className="category" >
-                    <select id="selector" className="selector" onChange={test} name="Все категории">
+                    <select id="selector" className="selector" onChange={test} name="Все категории" defaultValue="0">
                         <option disabled={true} selected={true} value="0">Выберите категорию</option>
                         <option value="1">Бульоны и супы</option>
                         <option value="2">Горячие блюда</option>

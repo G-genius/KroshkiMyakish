@@ -8,12 +8,10 @@ class RecipeService {
         return {recipe: recipeDto}
     }
     async getAllRecipes() {
-        const recipes = await RecipeModel.find()
-        return recipes
+        return RecipeModel.find();
     }
     async getRecipe() {
-        const recipes = await RecipeModel.findOne({_id: "63efe20ef33641c530e2c55c"})
-        return recipes
+        return RecipeModel.findOne({_id: "6404ee0f5fc067d74622a95e"});
     }
 }
 module.exports = new RecipeService()

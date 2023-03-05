@@ -4,13 +4,12 @@ import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import {useState} from "react";
 import RecipeService from "../../services/RecipeService";
-
+import ReactQuill from "react-quill";
 const RecipeInfo = () => {
     const [recipes, setRecipes] = useState([]);
 
     //console.log(recipes)
     async function getRecipe() {
-
         try {
             const recipeId = window.location.href.split("/")[4]
             const response = await RecipeService.getRecipe();
@@ -21,13 +20,6 @@ const RecipeInfo = () => {
         }
     }
     getRecipe()
-    let stringToHTML = function (str) {
-        let dom = document.createElement('recipe_text');
-        dom.innerHTML = str;
-        return dom;
-
-    };
-    //console.log(stringToHTML(recipes.map(recipe => recipe.desc)));
 
     return (
         <div className="recipe_info">
@@ -50,8 +42,7 @@ const RecipeInfo = () => {
                     <div className="recipe_short_info">
                         <h2>{recipes.shortDesc}</h2>
                     </div>
-                    <div className="recipe_text">
-                        <h1>{(recipes.desc)}</h1>
+                    <div className="recipe_text" dangerouslySetInnerHTML={{__html: recipes.desc}}>
                     </div>
                 </div>
             </div>
