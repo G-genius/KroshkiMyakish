@@ -17,6 +17,7 @@
 .recipe-item {
     padding: 15px;
     cursor: pointer;
+    width: 200px;
 }
 .list-item img {
     width: 200px;

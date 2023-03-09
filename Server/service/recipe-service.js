@@ -10,8 +10,8 @@ class RecipeService {
     async getAllRecipes() {
         return RecipeModel.find();
     }
-    async getRecipe() {
-        return RecipeModel.findOne({_id: "6404ee0f5fc067d74622a95e"});
+    async getRecipe(id) {
+        return RecipeModel.findOne({_id: id});
     }
 }
 module.exports = new RecipeService()

@@ -12,9 +12,9 @@ const RecipeInfo = () => {
     async function getRecipe() {
         try {
             const recipeId = window.location.href.split("/")[4]
-            const response = await RecipeService.getRecipe();
+            const response = await RecipeService.getRecipe(recipeId);
             setRecipes(response.data);
-            //console.log(recipeId)
+            console.log(recipeId)
         } catch (e) {
             console.log(e);
         }

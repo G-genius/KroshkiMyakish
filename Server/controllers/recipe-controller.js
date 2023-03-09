@@ -22,8 +22,8 @@ class RecipeController {
 
     async getRecipe(req, res, next) {
         try {
-            const { name } = req.body
-            const recipe = await recipeService.getRecipe(name)
+            const id = req.params.id
+            const recipe = await recipeService.getRecipe(id)
             return res.json(recipe)
         } catch (e) {
             next(e)

@@ -10,7 +10,7 @@ export default class RecipeService {
     static getRecipes(): Promise<AxiosResponse<IRecipe[]>> {
         return $api.get('/recipes')
     }
-    static getRecipe(): Promise<AxiosResponse<IRecipe[]>> {
-        return $api.get('/recipe/:id')
+    static getRecipe(id): Promise<AxiosResponse<IRecipe[]>> {
+        return $api.get(`/recipe/${id}`)
     }
 }

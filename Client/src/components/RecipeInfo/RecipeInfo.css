@@ -12,7 +12,9 @@
     cursor: pointer;
 }
 .recipe_main_image img{
-    width: 100%;
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
     border-radius: 30px;
 }
 .recipe_name {

@@ -36,8 +36,8 @@ const SliderSlick = () => {
                 <div>
                     <img className="sliderImg" src={slider3} alt="slider"/>
                     <div className="desc-slider">
-                        <p className="black">Самая вкусная пицца за 15 минут!</p>
-                        <Link to="/" className="black">Смотреть</Link>
+                        <p className="black">Самая вкусная пицца за 30 минут!</p>
+                        <Link to="/recipe/64058c96206494fa559bcf89" className="black">Смотреть</Link>
                     </div>
                 </div>
             </Slider>
