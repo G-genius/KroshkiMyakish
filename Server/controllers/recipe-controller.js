@@ -4,8 +4,8 @@ const userService = require("../service/user-service");
 class RecipeController {
     async addRecipe(req, res, next) {
         try {
-            const {name, shortDesc, mainPhoto, category, time, desc, video, count} = req.body
-            const recipeData = await recipeService.addRecipe(name, shortDesc, mainPhoto, category, time, desc, video, count)
+            const {name, shortDesc, mainPhoto, category, time, desc, video, count, author} = req.body
+            const recipeData = await recipeService.addRecipe(name, shortDesc, mainPhoto, category, time, desc, video, count, author)
             return res.json(recipeData)
         } catch (e) {
             next(e)

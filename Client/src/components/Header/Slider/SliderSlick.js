@@ -22,15 +22,15 @@ const SliderSlick = () => {
                 <div>
                     <img className="sliderImg" src={slider1} alt="slider"/>
                     <div className="desc-slider">
-                        <p>Новые рецепты!</p>
-                        <Link to="/">Смотреть</Link>
+                        <p>Салат цезарь!</p>
+                        <Link to="/recipe/6409735ed6b361cdf7554dba">Смотреть</Link>
                     </div>
                 </div>
                 <div>
                     <img className="sliderImg" src={slider2} alt="slider"/>
                     <div className="desc-slider">
-                        <p>Новые рецепты!</p>
-                        <Link to="/">Смотреть</Link>
+                        <p>Свежая выпечка!</p>
+                        <Link to="/recipes/vypechka">Смотреть</Link>
                     </div>
                 </div>
                 <div>

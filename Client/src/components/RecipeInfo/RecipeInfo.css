@@ -10,6 +10,7 @@
 .recipe_category p{
     text-decoration: #509E2F underline;
     cursor: pointer;
+    font-weight: bold;
 }
 .recipe_main_image img{
     display: flex;

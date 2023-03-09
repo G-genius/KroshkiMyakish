@@ -8,7 +8,8 @@ const RecipeSchema = new Schema({
     time: {type: Number, required: true},
     desc: {type: String, required: true},
     video: {type: String, required: false},
-    count: {type: Number, required: true}
+    count: {type: Number, required: true},
+    author: {type: String, required: false}
 })
 
 module.exports = model('Recipe', RecipeSchema);

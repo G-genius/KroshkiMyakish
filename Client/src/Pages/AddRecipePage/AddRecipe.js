@@ -20,6 +20,7 @@ const AddRecipe = () => {
     const [category, setCategory] = useState('')
     const [time, setTime] = useState(0)
     const [count, setCount] = useState(0)
+    const [author, setAuthor] = useState('')
     const [desc, setDesc] = useState('')
     const [video, setVideo] = useState('')
     const handleQuill = (e) => {
@@ -44,7 +45,8 @@ const AddRecipe = () => {
     ]
 
     const addRecipe = () => {
-        store.addRecipe(name, shortDesc, mainPhoto, category, time, desc, video, count)
+        setAuthor(store.user.email)
+        store.addRecipe(name, shortDesc, mainPhoto, category, time, desc, video, count, author)
         navigate(`/recipe/${store.recipe.id}`)
     }
     const updateMainPhoto = async (base64) => {

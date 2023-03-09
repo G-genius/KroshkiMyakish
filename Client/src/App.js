@@ -30,13 +30,21 @@ export default class App extends Component {
             <Route path="account/edit" element={<EditPage/>}/>
             <Route path="/recipes" element={<RecipesPage/>}>
                 <Route path="soups" element={<Soups/>}/>
+                <Route path="супы" element={<Soups/>}/>
                 <Route path="goryachie_bliuda" element={<GoryachieBliuda/>}/>
+                <Route path="горячиеБлюда" element={<GoryachieBliuda/>}/>
                 <Route path="salad" element={<Salad/>}/>
+                <Route path="салаты" element={<Salad/>}/>
                 <Route path="zakuski" element={<Zakuski/>}/>
+                <Route path="закуски" element={<Zakuski/>}/>
                 <Route path="vypechka" element={<Vypeshka/>}/>
+                <Route path="выпечка" element={<Vypeshka/>}/>
                 <Route path="dessert" element={<Dessert/>}/>
+                <Route path="десерты" element={<Dessert/>}/>
                 <Route path="sousy" element={<Sousy/>}/>
+                <Route path="соусы" element={<Sousy/>}/>
                 <Route path="napitki" element={<Napitki/>}/>
+                <Route path="напитки" element={<Napitki/>}/>
             </Route>
 
         </Routes>

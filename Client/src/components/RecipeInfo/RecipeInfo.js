@@ -5,6 +5,7 @@ import Footer from "../Footer/Footer";
 import {useState} from "react";
 import RecipeService from "../../services/RecipeService";
 import ReactQuill from "react-quill";
+import {useNavigate} from "react-router-dom";
 const RecipeInfo = () => {
     const [recipes, setRecipes] = useState([]);
 
@@ -21,13 +22,18 @@ const RecipeInfo = () => {
     }
     getRecipe()
 
+
+
     return (
         <div className="recipe_info">
             <Header/>
             <div className="container">
                 <div className="recipe_info_item">
                     <div className="recipe_category">
-                        <p>Название рубрики</p>
+                        <a href={`/recipes/${recipes.category}`}>{recipes.category}</a>
+                    </div>
+                    <div className="recipe_author">
+                        <p>Автор: {recipes.author}</p>
                     </div>
                     <div className="recipe_name">
                         <h1>{recipes.name}</h1>

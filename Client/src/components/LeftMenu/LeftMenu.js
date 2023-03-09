@@ -6,7 +6,7 @@ const LeftMenu = () => {
         <div className="left-menu">
             <div className="list-menu">
                 <p className="main-name">Рецепты</p>
-                <Link className="recipe_list_item" to="/recipes/new-recipes">Новые рецепты</Link>
+                {/*<Link className="recipe_list_item" to="/recipes/new-recipes">Новые рецепты</Link>*/}
                 <Link className="recipe_list_item" to="/recipes/soups">Бульоны и супы</Link>
                 <Link className="recipe_list_item" to="/recipes/goryachie_bliuda">Горячие блюда</Link>
                 <Link className="recipe_list_item" to="/recipes/salad">Салаты</Link>
