@@ -13,5 +13,8 @@ class RecipeService {
     async getRecipe(id) {
         return RecipeModel.findOne({_id: id});
     }
+    async getRecipeByCategory(category) {
+        return RecipeModel.find({category: category})
+    }
 }
 module.exports = new RecipeService()

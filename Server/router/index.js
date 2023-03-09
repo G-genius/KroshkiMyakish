@@ -18,5 +18,6 @@ router.get('/account', userController.getAccount)
 router.post('/addRecipe', recipeController.addRecipe)
 router.get('/recipes', recipeController.getRecipes)
 router.get('/recipe/:id', recipeController.getRecipe)
+router.get('/recipes/:category', recipeController.getRecipeByCategory)
 
 module.exports = router

@@ -8,8 +8,10 @@ import 'react-quill/dist/quill.snow.css';
 import {useContext, useEffect, useState} from "react";
 import App from "../../App";
 import {Context} from "../../index";
+import {useNavigate} from "react-router-dom";
 
 const AddRecipe = () => {
+    const navigate = useNavigate()
     const {store} = useContext(Context)
     const [quill, setQuill] = useState("")
     const [name, setName] = useState('')
@@ -43,6 +45,7 @@ const AddRecipe = () => {
 
     const addRecipe = () => {
         store.addRecipe(name, shortDesc, mainPhoto, category, time, desc, video, count)
+        navigate(`/recipe/${store.recipe.id}`)
     }
     const updateMainPhoto = async (base64) => {
         setMainPhoto(base64[0].base64)
@@ -67,7 +70,7 @@ const AddRecipe = () => {
                         <p>Краткое описание:</p>
                         <div className="add_recipe_item">
                             <textarea
-                                maxLength={100}
+                                maxLength={200}
                                 value={shortDesc}
                                 onChange={e => setShortDesc(e.target.value)}
                             />
