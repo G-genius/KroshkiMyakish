@@ -84,6 +84,15 @@ class UserService {
         const users = await UserModel.findOne()
         return users
     }
+    async updateAccount(photo, interests, about, favoriteFood) {
+        const user = await UserModel.create({photo, interests, about, favoriteFood})
+
+        const userDto = new UserDto(user)
+        const tokens = tokenService.generateTokens({...userDto})
+        await tokenService.saveToken(userDto.id, tokens.refreshToken)
+
+        return {...tokens, user: userDto}
+    }
 }
 
 module.exports = new UserService()

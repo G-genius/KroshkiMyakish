@@ -2,6 +2,7 @@ footer {
     display: flex;
     height: 243px;
     background: url("/src/img/Footer/footer.png");
+    margin-top: 30px;
 }
 .footer {
     display: flex;

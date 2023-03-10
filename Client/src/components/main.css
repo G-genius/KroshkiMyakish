@@ -3,7 +3,6 @@
 }
 .main-left {
     margin-top: 100px;
-    padding: 20px;
 }
 .main-recipe-list {
     display: flex;
@@ -16,7 +15,7 @@
 }
 .left-icon {
     display: flex;
-    width: 420px;
+    width: 260px;
 }
 .button {
     color: #509E2F;

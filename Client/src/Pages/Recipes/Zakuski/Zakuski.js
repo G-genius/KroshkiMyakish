@@ -28,6 +28,7 @@ const Zakuski = () => {
         <div>
             <div className="container">
                 <h1>Закуски</h1>
+                <div className="recipeList">
                 {recipes.map(recipe =>
                     <div className="recipe-item">
                         <Link to={"/recipe/"+recipe._id} className="link" onClick={OpenRecipe}>
@@ -46,6 +47,7 @@ const Zakuski = () => {
                         </Link>
                     </div>
                 )}
+                </div>
             </div>
         </div>
     )

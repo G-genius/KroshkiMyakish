@@ -24,7 +24,6 @@ const AddRecipe = () => {
     const [desc, setDesc] = useState('')
     const [video, setVideo] = useState('')
     const handleQuill = (e) => {
-        console.log(e)
 
         setDesc(e)
     }

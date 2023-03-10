@@ -79,6 +79,16 @@ class UserController {
         }
     }
 
+    async updateAccount(req, res, next) {
+        try {
+            const {photo, interests, about, favoriteFood} = req.body
+            const userData = await userService.updateAccount(photo, interests, about, favoriteFood)
+            return res.json(userData)
+        } catch (e) {
+            next(e)
+        }
+    }
+
 
 }
 

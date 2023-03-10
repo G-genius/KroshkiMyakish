@@ -6,6 +6,10 @@ const UserSchema = new Schema({
     city: {type: String, required: true},
     isActivated: {type: Boolean, default: false},
     activationLink: {type: String},
+    photo: {type: String, required: false},
+    interests: {type: String, required: false},
+    about: {type: String, required: false},
+    favoriteFood: {type: String, required: false},
 })
 
 module.exports = model('User', UserSchema);

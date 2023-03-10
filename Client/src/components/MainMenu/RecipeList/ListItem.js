@@ -36,12 +36,12 @@ const ListItem = () => {
                         <div className="recipe-bottom-list">
                             <div className="recipe-bottom">
                                 <img src={watch} alt="dish2"/>
-                                <p>{recipe.time}</p>
+                                <p>{recipe.time} мин.</p>
                             </div>
-                            <div className="recipe-bottom">
-                                <img src={chat} alt="dish3"/>
-                                <p>35</p>
-                            </div>
+                            {/*<div className="recipe-bottom">*/}
+                            {/*    <img src={chat} alt="dish3"/>*/}
+                            {/*    <p>35</p>*/}
+                            {/*</div>*/}
                         </div>
                     </Link>
                 </div>

@@ -28,6 +28,7 @@ const Dessert = () => {
         <div>
             <div className="container">
                 <h1>Десерты</h1>
+                <div className="recipeList">
                 {recipes.map(recipe =>
                     <div className="recipe-item">
                         <Link to={"/recipe/"+recipe._id} className="link" onClick={OpenRecipe}>
@@ -46,6 +47,7 @@ const Dessert = () => {
                         </Link>
                     </div>
                 )}
+                </div>
             </div>
         </div>
     )
