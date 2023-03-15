@@ -26,7 +26,12 @@ export default class Store {
     }
 
 
-
+    async Close() {
+        let modelReg = document.getElementById("regModal")
+        let modelLog = document.getElementById("logModal")
+        modelReg.style.display = "none";
+        modelLog.style.display = "none";
+    }
 
     async login(email, password) {
         try {
@@ -44,13 +49,27 @@ export default class Store {
     async registration(email, city, password, photo, about) {
         try {
             const response = await AuthService.registration(email, city, password, photo, about)
-            console.log(response)
+            //console.log(response)
             localStorage.setItem('token', response.data.accessToken)
             this.setAuth(true)
             this.setUser(response.data.user)
-
+            await this.Close()
         } catch (e) {
             console.log(e.response?.data?.message)
+            const errorMsg_email = document.getElementById("error_email")
+            const errorMsg = document.getElementById("error")
+            const errorPass = document.getElementById("error_pass")
+            if (e.response?.data?.message === `Пользователь с данной почтой ${email} уже существует`) {
+                errorMsg.style.display = "none"
+                errorMsg_email.style.display = "block"
+            }
+            if (e.response?.data?.message === `Ошибка при валидации`) {
+                errorPass.style.display = "block"
+            }
+            else {
+                errorMsg_email.style.display = "none"
+                errorMsg.style.display = "block"
+            }
         }
     }
     async updateAccount(photo, interests, about, favoriteFood) {

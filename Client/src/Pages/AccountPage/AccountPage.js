@@ -50,13 +50,7 @@ const AccountPage = () => {
                             </div>
                         </div>
                         <div className="account-block">
-                            <span>Интересы:</span>
-                        </div>
-                        <div className="account-block">
-                            <span>Обо мне:</span>
-                        </div>
-                        <div className="account-block">
-                            <span>Любимые блюда:</span>
+                            <span>Обо мне: {store.user.about}</span>
                         </div>
                         <div className="account-block">
                             <span>Добавлено рецептов: {}</span>

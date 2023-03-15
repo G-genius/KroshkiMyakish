@@ -81,8 +81,8 @@ const Header = () => {
     }, 1)
 
     const Registration = () => {
-        store.registration(email, city, password)
-        Close()
+        store.registration(email, city, password, photo, about)
+        //Close()
     }
 
     const Login = () => {
@@ -116,12 +116,16 @@ const Header = () => {
                                 <p className="RegName">Регистрация</p>
                             </div>
                             <div className="field">
+                                <span id="error" className="error_text">Вы заполнили не все поля!</span>
+                                <span id="error_email" className="error_text">Пользователь с данной почтой {email} уже существует!</span>
+                                <span id="error_pass" className="error_text">Пароли не совпадают!</span>
                                 <p>Ваш email</p>
                                 <input
                                     onChange={e => setEmail(e.target.value)}
                                     value={email}
                                     type="text"
                                     placeholder="Email"
+                                    required
                                 />
                             </div>
                             <div className="field">
@@ -131,6 +135,7 @@ const Header = () => {
                                     value={city}
                                     type="text"
                                     placeholder="Город"
+                                    required
                                 />
                             </div>
                             <div className="field">
@@ -140,6 +145,7 @@ const Header = () => {
                                     value={photo}
                                     type="text"
                                     placeholder="Photo"
+                                    required
                                 />
                             </div>
                             <div className="field">
@@ -148,9 +154,11 @@ const Header = () => {
                                     onChange={e => setAbout(e.target.value)}
                                     value={about}
                                     placeholder="О себе"
+                                    required
                                 />
                             </div>
                             <div>
+                                <span id="error_pass" className="error_text">Пароли не совпадают!</span>
                                 <p>Введите пароль</p>
                                 <div className="pass-field field">
                                     <input
@@ -158,6 +166,7 @@ const Header = () => {
                                         value={password}
                                         type="password"
                                         placeholder="password"
+                                        required
                                     />
                                     {/*<img src={showPass} className="open-pass-btn" onClick={OpenPassword}*/}
                                     {/*     alt="showPass"/>*/}
@@ -166,13 +175,13 @@ const Header = () => {
                             <div>
                                 <p>Повторите пароль</p>
                                 <div className="pass-field field">
-                                    <input id="pass-input-repeat" type="password"/>
+                                    <input id="pass-input-repeat" type="password" required/>
                                     {/*<img src={showPass} className="open-pass-btn" onClick={OpenPassword}*/}
                                     {/*     alt="showPass"/>*/}
                                 </div>
                             </div>
                             <div>
-                                <button className="logoutBtn" onClick={Registration}>Регистрация</button>
+                                <button className="logoutBtn" type="submit" onClick={Registration}>Регистрация</button>
                             </div>
                             <div>
                                 <p className="bottom-btn" onClick={OpenNotReg}>Уже есть аккаунт? Войти</p>
