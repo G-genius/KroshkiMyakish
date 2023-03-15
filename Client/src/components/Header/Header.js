@@ -10,6 +10,8 @@ const Header = () => {
 
     const [email, setEmail] = useState('')
     const [city, setCity] = useState('')
+    const [photo, setPhoto] = useState('')
+    const [about, setAbout] = useState('')
     const [password, setPassword] = useState('')
     const {store} = useContext(Context)
 
@@ -129,6 +131,23 @@ const Header = () => {
                                     value={city}
                                     type="text"
                                     placeholder="Город"
+                                />
+                            </div>
+                            <div className="field">
+                                <p>Фотография</p>
+                                <input
+                                    onChange={e => setPhoto(e.target.value)}
+                                    value={photo}
+                                    type="text"
+                                    placeholder="Photo"
+                                />
+                            </div>
+                            <div className="field">
+                                <p>Немного информации о себе</p>
+                                <textarea
+                                    onChange={e => setAbout(e.target.value)}
+                                    value={about}
+                                    placeholder="О себе"
                                 />
                             </div>
                             <div>

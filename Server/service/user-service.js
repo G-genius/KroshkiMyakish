@@ -9,7 +9,7 @@ const RecipeDto = require('../dtos/recipe-dtos')
 const ApiError = require('../exceptions/api-error')
 
 class UserService {
-    async registration(email, city, password) {
+    async registration(email, city, password, photo, about) {
         const candidate = await UserModel.findOne({email})
         if (candidate) {
             throw  ApiError.BadRequest(`Пользователь с данной почтой ${email} уже существует`)
@@ -17,7 +17,7 @@ class UserService {
         const hashPassword = await bcrypt.hash(password, 3)
         const activationLink = uuid.v4()
 
-        const user = await UserModel.create({email, city, password: hashPassword, activationLink})
+        const user = await UserModel.create({email, city, password: hashPassword, activationLink, photo, about})
         await mailService.sendActivationMail(email, `${process.env.API_URL}/api/activate/${activationLink}`)
 
         const userDto = new UserDto(user)
@@ -78,20 +78,6 @@ class UserService {
     async getAllUsers() {
         const users = await UserModel.find()
         return users
-    }
-
-    async getAccount() {
-        const users = await UserModel.findOne()
-        return users
-    }
-    async updateAccount(photo, interests, about, favoriteFood) {
-        const user = await UserModel.create({photo, interests, about, favoriteFood})
-
-        const userDto = new UserDto(user)
-        const tokens = tokenService.generateTokens({...userDto})
-        await tokenService.saveToken(userDto.id, tokens.refreshToken)
-
-        return {...tokens, user: userDto}
     }
 }
 

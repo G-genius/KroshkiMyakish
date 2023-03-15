@@ -31,7 +31,7 @@ const Soups = () => {
                 <h1>Бульоны и супы</h1>
                 <div className="recipeList">
                 {recipes.map(recipe =>
-                    <div className="recipe-item">
+                    <div className="recipe-item" key={recipe._id}>
                         <Link to={"/recipe/"+recipe._id} className="link" onClick={OpenRecipe}>
                             <img src={recipe.mainPhoto} alt="dish1"/>
                             <p>{recipe.name}</p>
