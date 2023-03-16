@@ -6,6 +6,7 @@ const UserSchema = new Schema({
     city: {type: String, required: true},
     isActivated: {type: Boolean, default: false},
     activationLink: {type: String},
+    name:{type:String, required: true},
     photo: {type: String, required: false},
     about: {type: String, required: false}
 })

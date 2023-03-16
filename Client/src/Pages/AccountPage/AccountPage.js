@@ -46,6 +46,8 @@ const AccountPage = () => {
                             <img src={UserLogo} alt="user-logo"/>
                             <div className="user_locate">
                                 <h1 className="user_name">{store.user.email}</h1>
+                                <span>{store.user.name}</span>
+                                <br/>
                                 <span>{store.user.city}</span>
                             </div>
                         </div>

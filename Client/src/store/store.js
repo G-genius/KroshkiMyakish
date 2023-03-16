@@ -46,9 +46,9 @@ export default class Store {
         }
     }
 
-    async registration(email, city, password, photo, about) {
+    async registration(email, city, password, photo, about, name) {
         try {
-            const response = await AuthService.registration(email, city, password, photo, about)
+            const response = await AuthService.registration(email, city, password, photo, about, name)
             //console.log(response)
             localStorage.setItem('token', response.data.accessToken)
             this.setAuth(true)
@@ -88,10 +88,9 @@ export default class Store {
     async logout() {
         try {
             const response = await AuthService.logout()
-            localStorage.setItem('token')
+            localStorage.removeItem('token')
             this.setAuth(false)
             this.setUser({})
-
         } catch (e) {
             console.log(e.response?.data?.message)
         }

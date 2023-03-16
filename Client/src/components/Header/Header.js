@@ -12,6 +12,7 @@ const Header = () => {
     const [city, setCity] = useState('')
     const [photo, setPhoto] = useState('')
     const [about, setAbout] = useState('')
+    const [name, setName] = useState('')
     const [password, setPassword] = useState('')
     const {store} = useContext(Context)
 
@@ -75,13 +76,22 @@ const Header = () => {
         if (store.isAuth) {
             menuBtn.style.display = "none"
         }
-        else {
-
+        try {
+            if (!store.user.isActivated) {
+                const isActivated = document.getElementById("isActivated")
+                isActivated.style.display = "block"
+            } else {
+                const isActivated = document.getElementById("isActivated")
+                isActivated.style.display = "none"
+            }
+        } catch (e) {
+            return null
         }
-    }, 1)
+
+    }, 2)
 
     const Registration = () => {
-        store.registration(email, city, password, photo, about)
+        store.registration(email, city, password, photo, about, name)
         //Close()
     }
 
@@ -95,11 +105,15 @@ const Header = () => {
         loading.style.display = "none"
     }
 
+
+
+
+
     return (
         <div className="header">
             <header>
-                <h5>{store.isAuth ? `Здравствуйте, ${store.user.email}` : `Авторизуйтесь!!!`}</h5>
-
+                <h5>{store.isAuth ? `Здравствуйте, ${store.user.name}` : `Авторизуйтесь!!!`}</h5>
+                <span id="isActivated">Пожалуйста подтвердите ваш аккаунт, ссылка с активацией выслана на ваш Email!</span>
                 <h5 id="loading">Загрузка . . .</h5>
                 <div className="menu-btn" id="btn-menu">
                     <ul className="menu">
@@ -129,7 +143,17 @@ const Header = () => {
                                 />
                             </div>
                             <div className="field">
-                                <p>Ввдите ваш город</p>
+                                <p>Введите ваше имя</p>
+                                <input
+                                    onChange={e => setName(e.target.value)}
+                                    value={name}
+                                    type="text"
+                                    placeholder="Имя"
+                                    required
+                                />
+                            </div>
+                            <div className="field">
+                                <p>Введите ваш город</p>
                                 <input
                                     onChange={e => setCity(e.target.value)}
                                     value={city}
@@ -203,6 +227,7 @@ const Header = () => {
                                     value={email}
                                     type="text"
                                     placeholder="Email"
+                                    required
                                 />
                             </div>
                             <div>
@@ -213,6 +238,7 @@ const Header = () => {
                                         value={password}
                                         type="password"
                                         placeholder="password"
+                                        required
                                     />
                                 </div>
 
