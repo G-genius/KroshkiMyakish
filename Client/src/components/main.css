@@ -51,6 +51,9 @@ input {
     .main-recipe-list {
         width: 100%;
     }
+    .outlet {
+        margin-left: 60px;
+    }
 }
 
 

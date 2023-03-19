@@ -52,3 +52,9 @@
     background: #509E2F;
     color: #D9D9D9;
 }
+
+@media screen and (max-width: 720px){
+    .account_main_page {
+        padding: 15px;
+    }
+}

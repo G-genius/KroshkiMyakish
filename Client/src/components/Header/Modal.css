@@ -83,3 +83,9 @@
 .bottom-btn {
     padding: 10px;
 }
+
+@media screen and (max-width: 720px){
+    .modal-content {
+        width: 70%;
+    }
+}

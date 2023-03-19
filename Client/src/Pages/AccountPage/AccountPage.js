@@ -59,9 +59,9 @@ const AccountPage = () => {
                         </div>
 
                     </div>
-                    <div className="change_info">
-                        <p onClick={OpenEditPage}>Редактировать профиль</p>
-                    </div>
+                    {/*<div className="change_info">*/}
+                    {/*    <p onClick={OpenEditPage}>Редактировать профиль</p>*/}
+                    {/*</div>*/}
 
 
                 </div>

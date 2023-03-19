@@ -114,3 +114,9 @@
         transform: rotateX(35deg) rotateY(55deg) rotateZ(360deg);
     }
 }
+
+@media screen and (max-width: 720px){
+    .recipe_info_item {
+        padding: 20px;
+    }
+}

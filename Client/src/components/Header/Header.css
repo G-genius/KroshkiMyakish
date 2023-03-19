@@ -75,10 +75,14 @@ header {
 @media screen and (max-width: 720px){
 
     header {
-        height: auto;
+        height: 50px;
     }
     header h5 {
         text-align: center;
+    }
+    .menu-btn {
+        right: 70px;
+        top: 20px;
     }
 
 

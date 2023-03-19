@@ -3,7 +3,7 @@ import "./SubHeader.css"
 import arrow from "./../../../img/header/arrow.svg"
 import searchIcon from "../../../img/header/searchIcon.svg"
 import userIcon from "../../../img/header/user.svg"
-import {Link, useNavigate} from "react-router-dom";
+import {Link, Outlet, useNavigate} from "react-router-dom";
 import {useContext, useReducer} from "react";
 import {Context} from "../../../index";
 
@@ -91,6 +91,7 @@ const SubHeader = () => {
                 <Link to="/add-recipe" className="add-recipe">Добавить рецепт</Link>
                 <img className="user-icon" src={userIcon} alt={userIcon} onClick={OpenAccountPage}/>
             </div>
+
         </div>
     )
 }

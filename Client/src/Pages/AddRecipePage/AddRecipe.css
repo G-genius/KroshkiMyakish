@@ -35,3 +35,28 @@ textarea {
 .ql-editor {
     min-height: 350px;
 }
+
+@media screen and (max-width: 720px){
+
+    .add_recipe {
+        padding: 10px;
+    }
+    .big_input {
+        width: 90%;
+    }
+    textarea {
+        width: 90%;
+    }
+
+    .add_recipe_form {
+        width: 90%;
+    }
+    .button-add-recipe span{
+        font-size: 13px;
+    }
+
+    .button-add-recipe {
+        margin: 0 auto;
+    }
+
+}
