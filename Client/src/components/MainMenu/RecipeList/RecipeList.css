@@ -65,3 +65,14 @@
 .recipe_list_item_info {
     display: none;
 }
+
+@media screen and (max-width: 720px){
+    .recipeList {
+
+    }
+
+    .list-item {
+        margin: 0 auto;
+
+    }
+}

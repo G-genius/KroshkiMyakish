@@ -42,3 +42,9 @@
 .black {
     color: black;
 }
+
+@media screen and (max-width: 720px){
+    .slider-slick {
+        display: none;
+    }
+}

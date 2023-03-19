@@ -49,3 +49,28 @@ footer {
      margin-right: 5px;
      cursor: pointer;
  }
+
+@media screen and (max-width: 720px){
+    .footer {
+        width: 100%;
+    }
+
+    footer {
+        display: block;
+    }
+
+    .list {
+        font-size: 15px;
+        width: 90px;
+    }
+
+    .list:first-child {
+        margin-left: 0px;
+    }
+
+    .third-block {
+        display: none;
+    }
+
+
+}

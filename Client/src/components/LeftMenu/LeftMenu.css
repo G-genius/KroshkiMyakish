@@ -16,7 +16,7 @@
     font-weight: bold;
     margin-left: 100px;
     /*justify-content: start;*/
-    margin-right: 120px;
+    margin-right: 150px;
 }
 .recipe_list_item {
     color: black;
@@ -25,4 +25,8 @@
 }
 .recipe_list_item:hover {
     color: #509E2F;
+}
+
+@media screen and (max-width: 720px){
+
 }

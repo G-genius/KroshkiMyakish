@@ -24,3 +24,17 @@
     height: 5px;
     width: 725px;
 }
+
+@media screen and (max-width: 720px){
+    .MainMenu {
+        width: 300px;
+    }
+
+    .main-menu {
+        width: 300px;
+    }
+
+    .menu-line img {
+        width: 400px;
+    }
+}

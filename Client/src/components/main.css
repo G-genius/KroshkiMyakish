@@ -15,7 +15,7 @@
 }
 .left-icon {
     display: flex;
-    width: 260px;
+    margin-left: 100px;
 }
 .button {
     color: #509E2F;
@@ -37,6 +37,20 @@ input, textarea{
 }
 input {
     height: 25px;
+}
+
+@media screen and (max-width: 720px){
+    .main-left {
+        display: none;
+    }
+
+    .left-icon {
+        display: none;
+    }
+
+    .main-recipe-list {
+        width: 100%;
+    }
 }
 
 

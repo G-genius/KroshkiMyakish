@@ -93,3 +93,34 @@
 .selector option:hover {
     background: #509E2F;
 }
+
+@media screen and (max-width: 720px){
+
+    .logo {
+        margin: 0 auto;
+    }
+
+    .sub-header {
+        display: block;
+    }
+    .logo {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .search {
+        display: block;
+        height: 65px;
+        width: 300px;
+    }
+    .search-icon {
+        display: none;
+    }
+
+    .user {
+        margin-top: 20px;
+    }
+
+
+
+}
