@@ -6,10 +6,12 @@ import UserService from "../../../services/UserService";
 import RecipeService from "../../../services/RecipeService";
 import React, {useState} from "react";
 import FileBase64 from "react-filebase64";
+import SearchFeature from "../../SearchFeature/SearchFeature";
 
 const ListItem = () => {
     const [recipes, setRecipes] = useState([]);
     const [isLoading, setIsLoading] = useState(false)
+    const [SearchTerms, setSearchTerms] = useState("")
     const OpenRecipe = () => {
         window.scrollBy({
             top: -10000,
@@ -35,8 +37,21 @@ const ListItem = () => {
         getRecipes()
     }, 2)
 
+    const updateSearchTerms = (newSearchTerm) => {
+
+        const variables = {
+            skip: 0,
+            searchTerm: newSearchTerm
+        }
+        setSearchTerms(newSearchTerm)
+        getRecipes(variables)
+    }
+
     return (
         <div>
+            <SearchFeature
+                refreshFunction={updateSearchTerms}
+            />
             <div className="loader" id="loader">
                 <div className="inner one"></div>
                 <div className="inner two"></div>

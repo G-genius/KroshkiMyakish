@@ -4,13 +4,15 @@ import arrow from "./../../../img/header/arrow.svg"
 import searchIcon from "../../../img/header/searchIcon.svg"
 import userIcon from "../../../img/header/user.svg"
 import {Link, Outlet, useNavigate} from "react-router-dom";
-import {useContext, useReducer} from "react";
+import {useContext, useReducer, useState} from "react";
 import {Context} from "../../../index";
+import SearchFeature from "../../SearchFeature/SearchFeature";
 
 const SubHeader = () => {
     const navigate = useNavigate()
     const [_, forceUpdate] = useReducer((x) => x + 1, 0);
     const {store} = useContext(Context)
+
     const OpenMainPage = () => {
         navigate("/")
         window.scrollBy(0, -10000)
@@ -61,6 +63,8 @@ const SubHeader = () => {
         }
     }
 
+
+
     return (
         <div className="sub-header">
             {/*<img className="logo" onClick={OpenMainPage} src={logo} alt={logo}/>*/}
@@ -79,12 +83,12 @@ const SubHeader = () => {
                         <option value="8">Напитки</option>
                     </select>
                 </div>
-                <div className="inputSearch">
-                    <input placeholder="Поиск"/>
-                </div>
-                <div className="search-icon">
-                    <img src={searchIcon} alt={searchIcon}/>
-                </div>
+                {/*<div className="inputSearch">*/}
+                {/*    <input placeholder="Поиск"/>*/}
+                {/*</div>*/}
+                {/*<div className="search-icon">*/}
+                {/*    <img src={searchIcon} alt={searchIcon}/>*/}
+                {/*</div>*/}
             </div>
 
             <div className="user" id="user-board">

@@ -8,8 +8,14 @@ class RecipeService {
         const recipeDto = new RecipeDto(recipe)
         return {recipe: recipeDto}
     }
-    async getAllRecipes() {
-        return RecipeModel.find();
+    async getAllRecipes(term) {
+        if (term) {
+            return RecipeModel.find().find({$text: {$search: term}});
+        }
+        else {
+            return RecipeModel.find();
+        }
+
     }
     async getRecipe(id) {
         return RecipeModel.findOne({_id: id});

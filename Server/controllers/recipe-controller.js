@@ -12,13 +12,17 @@ class RecipeController {
         }
     }
     async getRecipes(req, res, next) {
+        let term = req.body.searchTerm
         try {
-            const recipes = await recipeService.getAllRecipes()
+            const recipes = await recipeService.getAllRecipes(term)
             return res.json(recipes)
+
         } catch (e) {
             next(e)
         }
     }
+
+
 
     async getRecipe(req, res, next) {
         try {
