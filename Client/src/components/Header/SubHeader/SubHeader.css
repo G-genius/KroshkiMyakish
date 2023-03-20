@@ -77,6 +77,7 @@
     cursor: pointer;
     color: #509E2F;
     text-decoration: none;
+    text-align: center;
 }
 .add-recipe:hover {
     background: #509E2F;

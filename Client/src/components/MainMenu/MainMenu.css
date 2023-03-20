@@ -30,11 +30,15 @@
         width: 300px;
     }
 
+    .MainMenu p {
+        font-size: 14px;
+    }
+
     .main-menu {
         width: 300px;
     }
 
     .menu-line img {
-        width: 400px;
+        width: 130%;
     }
 }
