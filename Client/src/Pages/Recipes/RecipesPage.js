@@ -5,7 +5,7 @@ import {Outlet} from "react-router-dom";
 
 const RecipesPage = () => {
     return (
-        <div className="container">
+        <div >
             <Header/>
             <div className="outlet">
                 <Outlet/>
