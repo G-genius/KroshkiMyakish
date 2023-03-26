@@ -5,8 +5,6 @@ import {Link} from "react-router-dom";
 import UserService from "../../../services/UserService";
 import RecipeService from "../../../services/RecipeService";
 import React, {useState} from "react";
-import FileBase64 from "react-filebase64";
-import SearchFeature from "../../SearchFeature/SearchFeature";
 
 const ListItem = () => {
     const [recipes, setRecipes] = useState([]);
@@ -37,21 +35,8 @@ const ListItem = () => {
         getRecipes()
     }, 2)
 
-    const updateSearchTerms = (newSearchTerm) => {
-
-        const variables = {
-            skip: 0,
-            searchTerm: newSearchTerm
-        }
-        setSearchTerms(newSearchTerm)
-        getRecipes(variables)
-    }
-
     return (
         <div>
-            <SearchFeature
-                refreshFunction={updateSearchTerms}
-            />
             <div className="loader" id="loader">
                 <div className="inner one"></div>
                 <div className="inner two"></div>

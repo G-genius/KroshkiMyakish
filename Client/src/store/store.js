@@ -72,18 +72,6 @@ export default class Store {
             }
         }
     }
-    async updateAccount(photo, interests, about, favoriteFood) {
-        try {
-            const response = await AuthService.updateAccount(photo, interests, about, favoriteFood)
-            console.log(response)
-            localStorage.setItem('token', response.data.accessToken)
-            this.setAuth(true)
-            this.setUser(response.data.user)
-
-        } catch (e) {
-            console.log(e.response?.data?.message)
-        }
-    }
 
     async logout() {
         try {

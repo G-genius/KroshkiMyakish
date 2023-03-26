@@ -5,7 +5,7 @@ import "./Modal.css"
 import SubHeader from "./SubHeader/SubHeader";
 import React, {useContext, useEffect, useReducer, useState} from "react";
 import {Context} from "../../index";
-
+import FileBase64 from 'react-filebase64';
 const Header = () => {
 
     const [email, setEmail] = useState('')
@@ -106,7 +106,10 @@ const Header = () => {
     }
 
 
+    const updatePhoto = async (base64) => {
+        setPhoto(base64[0].base64)
 
+    }
 
 
     return (
@@ -164,13 +167,9 @@ const Header = () => {
                             </div>
                             <div className="field">
                                 <p>Фотография</p>
-                                <input
-                                    onChange={e => setPhoto(e.target.value)}
-                                    value={photo}
-                                    type="text"
-                                    placeholder="Photo"
-                                    required
-                                />
+                                <FileBase64
+                                    multiple={ true }
+                                    onDone={ updatePhoto } />
                             </div>
                             <div className="field">
                                 <p>Немного информации о себе</p>

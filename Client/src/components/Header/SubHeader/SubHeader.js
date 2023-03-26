@@ -6,7 +6,6 @@ import userIcon from "../../../img/header/user.svg"
 import {Link, Outlet, useNavigate} from "react-router-dom";
 import {useContext, useReducer, useState} from "react";
 import {Context} from "../../../index";
-import SearchFeature from "../../SearchFeature/SearchFeature";
 
 const SubHeader = () => {
     const navigate = useNavigate()
