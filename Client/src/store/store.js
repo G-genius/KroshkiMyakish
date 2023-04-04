@@ -41,8 +41,18 @@ export default class Store {
             this.setAuth(true)
             this.setUser(response.data.user)
             // window.location.reload()
+            await this.Close()
         } catch (e) {
-            console.log(e.response?.data?.message)
+            const errorMsg = document.getElementById("error2")
+            const errorMsg3 = document.getElementById("error3")
+            if (e.response?.data?.message === `Пользователь с такой почтой не найден`) {
+                errorMsg.style.display = "block"
+                errorMsg3.style.display = "none"
+            }
+            else if (e.response?.data?.message === `Неверный пароль`) {
+                errorMsg.style.display = "none"
+                errorMsg3.style.display = "block"
+            }
         }
     }
 

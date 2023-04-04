@@ -11,7 +11,7 @@ const AccountPage = () => {
     const [users, setUsers] = useState([]);
     const {store} = useContext(Context)
     const navigate = useNavigate()
-
+    const UserLogo = require("../../img/header/user.svg")
     const OpenEditPage = () => {
         navigate("/account/edit")
         window.scrollBy(0, -10000)
@@ -43,7 +43,7 @@ const AccountPage = () => {
                 <div className="account_main_page">
                     <div className="account_page">
                         <div className="account_info">
-                            <img src={store.user.photo} alt="user-logo"/>
+                            <img src={store.user.photo} alt={UserLogo}/>
                             <div className="user_locate">
                                 <h1 className="user_name">{store.user.email}</h1>
                                 <span>{store.user.name}</span>

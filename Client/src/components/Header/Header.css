@@ -70,6 +70,13 @@ header {
     color: red;
     text-align: center;
 }
+.error {
+    color: red;
+    font-weight: bold;
+}
+#ifNotPass1, #ifNotPass2, #ifNotSame {
+    display: none;
+}
 
 
 @media screen and (max-width: 720px){

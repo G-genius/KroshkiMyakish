@@ -6,6 +6,7 @@ import SubHeader from "./SubHeader/SubHeader";
 import React, {useContext, useEffect, useReducer, useState} from "react";
 import {Context} from "../../index";
 import FileBase64 from 'react-filebase64';
+import {colors} from "@mui/material";
 const Header = () => {
 
     const [email, setEmail] = useState('')
@@ -14,6 +15,7 @@ const Header = () => {
     const [about, setAbout] = useState('')
     const [name, setName] = useState('')
     const [password, setPassword] = useState('')
+    const [rePassword, setRePassword] = useState('')
     const {store} = useContext(Context)
 
 
@@ -91,13 +93,33 @@ const Header = () => {
     }, 2)
 
     const Registration = () => {
-        store.registration(email, city, password, photo, about, name)
-        //Close()
+        let password1 = document.getElementById("password1").value
+        let password2 = document.getElementById("password2").value
+        let ifNotPass1 = document.getElementById("ifNotPass1")
+        let ifNotPass2 = document.getElementById("ifNotPass2")
+        let ifNotSame = document.getElementById("ifNotSame")
+        if (password1 === '') {
+            ifNotPass1.style.display = "block"
+            ifNotPass2.style.display = "none"
+            ifNotSame.style.display = "none"
+        }
+        else if (password2 === '') {
+            ifNotPass2.style.display = "block"
+            ifNotPass1.style.display = "none"
+            ifNotSame.style.display = "none"
+        }
+        else if (password1 !== password2) {
+            ifNotSame.style.display = "block"
+            ifNotPass1.style.display = "none"
+            ifNotPass2.style.display = "none"
+        }
+        else {
+            store.registration(email, city, password, photo, about, name)
+        }
     }
 
     const Login = () => {
         store.login(email, password)
-        Close()
     }
 
     if (store.isLoading) {
@@ -135,8 +157,8 @@ const Header = () => {
                             <div className="field">
                                 <span id="error" className="error_text">Вы заполнили не все поля!</span>
                                 <span id="error_email" className="error_text">Пользователь с данной почтой {email} уже существует!</span>
-                                <span id="error_pass" className="error_text">Пароли не совпадают!</span>
-                                <p>Ваш email</p>
+                                <span id="error_pass" className="error_text">Неверный формат почты!</span>
+                                <p><span className="red">*</span>Ваш email</p>
                                 <input
                                     onChange={e => setEmail(e.target.value)}
                                     value={email}
@@ -146,7 +168,7 @@ const Header = () => {
                                 />
                             </div>
                             <div className="field">
-                                <p>Введите ваш никнейм</p>
+                                <p><span className="red">*</span>Введите ваш никнейм</p>
                                 <input
                                     onChange={e => setName(e.target.value)}
                                     value={name}
@@ -156,7 +178,7 @@ const Header = () => {
                                 />
                             </div>
                             <div className="field">
-                                <p>Введите ваш город</p>
+                                <p><span className="red">*</span>Введите ваш город</p>
                                 <input
                                     onChange={e => setCity(e.target.value)}
                                     value={city}
@@ -180,12 +202,16 @@ const Header = () => {
                                     required
                                 />
                             </div>
+                            <span id="ifNotPass1" className="error">Введите пароль!</span>
+                            <span id="ifNotPass2" className="error">Введите повтроный пароль!</span>
+                            <span id="ifNotSame" className="error">Пароли не совпадают!</span>
                             <div>
                                 <span id="error_pass" className="error_text">Пароли не совпадают!</span>
-                                <p>Введите пароль</p>
+                                <p><span className="red">*</span>Введите пароль</p>
                                 <div className="pass-field field">
                                     <input
                                         onChange={e => setPassword(e.target.value)}
+                                        id="password1"
                                         value={password}
                                         type="password"
                                         placeholder="password"
@@ -196,9 +222,16 @@ const Header = () => {
                                 </div>
                             </div>
                             <div>
-                                <p>Повторите пароль</p>
+                                <p><span className="red">*</span>Повторите пароль</p>
                                 <div className="pass-field field">
-                                    <input id="pass-input-repeat" type="password" required/>
+                                    <input
+                                        onChange={e => setRePassword(e.target.value)}
+                                        id="password2"
+                                        value={rePassword}
+                                        type="password"
+                                        placeholder="password"
+                                        required
+                                    />
                                     {/*<img src={showPass} className="open-pass-btn" onClick={OpenPassword}*/}
                                     {/*     alt="showPass"/>*/}
                                 </div>
@@ -220,7 +253,9 @@ const Header = () => {
                                 <p className="RegName">Вход</p>
                             </div>
                             <div className="field">
-                                <p>Ваш email</p>
+                                <span id="error2" className="error_text">Пользователь с такой почтой не найден!</span>
+                                <span id="error3" className="error_text">Неверынй пароль!</span>
+                                <p><span className="red">*</span>Ваш email</p>
                                 <input
                                     onChange={e => setEmail(e.target.value)}
                                     value={email}
@@ -230,7 +265,7 @@ const Header = () => {
                                 />
                             </div>
                             <div>
-                                <p>Введите пароль</p>
+                                <p><span className="red">*</span>Введите пароль</p>
                                 <div className="pass-field field">
                                     <input
                                         onChange={e => setPassword(e.target.value)}
