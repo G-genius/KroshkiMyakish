@@ -101,7 +101,7 @@ export default class Store {
 
     async addRecipe(name, shortDesc, mainPhoto, category, time, desc, video, count, author) {
         try {
-            author = this.user.email
+            author = this.user.name
             const response = await RecipeService.addRecipe(name, shortDesc, mainPhoto, category, time, desc, video, count, author)
             console.log(response)
             this.setRecipe(response.data.recipe)

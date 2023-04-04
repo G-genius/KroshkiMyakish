@@ -43,7 +43,7 @@ const AccountPage = () => {
                 <div className="account_main_page">
                     <div className="account_page">
                         <div className="account_info">
-                            <img src={UserLogo} alt="user-logo"/>
+                            <img src={store.user.photo} alt="user-logo"/>
                             <div className="user_locate">
                                 <h1 className="user_name">{store.user.email}</h1>
                                 <span>{store.user.name}</span>
@@ -54,9 +54,9 @@ const AccountPage = () => {
                         <div className="account-block">
                             <span>Обо мне: {store.user.about}</span>
                         </div>
-                        <div className="account-block">
-                            <span>Добавлено рецептов: {}</span>
-                        </div>
+                        {/*<div className="account-block">*/}
+                        {/*    <span>Добавлено рецептов: {}</span>*/}
+                        {/*</div>*/}
 
                     </div>
                     {/*<div className="change_info">*/}

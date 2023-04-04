@@ -146,12 +146,12 @@ const Header = () => {
                                 />
                             </div>
                             <div className="field">
-                                <p>Введите ваше имя</p>
+                                <p>Введите ваш никнейм</p>
                                 <input
                                     onChange={e => setName(e.target.value)}
                                     value={name}
                                     type="text"
-                                    placeholder="Имя"
+                                    placeholder="Крутой повар"
                                     required
                                 />
                             </div>
