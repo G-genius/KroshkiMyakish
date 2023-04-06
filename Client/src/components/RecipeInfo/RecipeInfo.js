@@ -17,8 +17,6 @@ const RecipeInfo = () => {
         const recipeInfo = document.getElementById("recipe_main_info")
         recipeInfo.style.display = "block"
     }
-
-    //console.log(recipes)
     async function getRecipe() {
         try {
             const recipeId = window.location.href.split("/")[4]
@@ -29,10 +27,7 @@ const RecipeInfo = () => {
             console.log(e);
         }
     }
-
     getRecipe()
-
-
     return (
         <div className="recipe_info">
             <Header/>

@@ -11,7 +11,6 @@ const MainMenu = () => {
             <div className="main-menu">
                 <p><Link to="/">Домой</Link></p>
                 <p><Link to="/recipes">Рецепты</Link></p>
-                <p><Link to="/help">Помощь</Link></p>
                 <p><Link to="/account">Профиль</Link></p>
             </div>
             <div className="menu-line">

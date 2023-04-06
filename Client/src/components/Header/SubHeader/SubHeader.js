@@ -71,7 +71,7 @@ const SubHeader = () => {
             <div className="search">
                 <div className="category" >
                     <select id="selector" className="selector" onChange={test} name="Все категории" defaultValue="0">
-                        <option disabled={true} value="0">Выберите категорию</option>
+                        <option disabled={true} value="0">Выберите категорию рецепта</option>
                         <option value="1">Бульоны и супы</option>
                         <option value="2">Горячие блюда</option>
                         <option value="3">Салаты</option>

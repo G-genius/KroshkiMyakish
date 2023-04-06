@@ -15,9 +15,7 @@ const Vypeshka = () => {
             console.log(e);
         }
     }
-
     getRecipes()
-
     const OpenRecipe = () => {
         window.scrollBy({
             top: -10000,

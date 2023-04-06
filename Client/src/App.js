@@ -44,7 +44,7 @@ export default class App extends Component {
                 <Route path="sousy" element={<Sousy/>}/>
                 <Route path="соусы" element={<Sousy/>}/>
                 <Route path="napitki" element={<Napitki/>}/>
-                <Route path="напитки" element={<Napitki/>}/>
+                <Route path="Домашние%20напитки" element={<Napitki/>}/>
             </Route>
 
         </Routes>

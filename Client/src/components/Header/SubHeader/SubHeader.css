@@ -5,6 +5,7 @@
 .sub-header {
     display: flex;
     padding: 20px;
+    padding-top: 40px;
     align-items: center;
 }
 .arrow {
@@ -14,7 +15,7 @@
 }
 .search {
     display: flex;
-
+    width: 400px;
     height: 45px;
     border: solid 1px #D9D9D9;
     border-radius: 20px;
@@ -86,8 +87,7 @@
 .selector {
     border: none;
     color: #509E2F;
-    font-size: 16px;
-    width: 250px;
+    font-size: 22px;
     cursor: pointer;
     font-weight: bolder;
 }
@@ -103,6 +103,7 @@
 
     .sub-header {
         display: block;
+        padding-top: 70px;
     }
     .logo {
         text-align: center;
@@ -111,8 +112,8 @@
 
     .search {
         display: block;
-        height: 65px;
-        width: 300px;
+        height: 30px;
+        width: 270px;
     }
     .search-icon {
         display: none;
@@ -127,6 +128,9 @@
         margin: 0 auto;
         justify-content: center;
         align-items: center;
+    }
+    .selector {
+        font-size: 14px;
     }
 
 }

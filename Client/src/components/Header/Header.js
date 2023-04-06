@@ -139,7 +139,7 @@ const Header = () => {
             <header>
                 <h5>{store.isAuth ? `Здравствуйте, ${store.user.name}` : `Авторизуйтесь!!!`}</h5>
                 <span id="isActivated">Пожалуйста подтвердите ваш аккаунт, ссылка с активацией выслана на ваш Email!</span>
-                <h5 id="loading">Загрузка . . .</h5>
+                <h5 id="loading"></h5>
                 <div className="menu-btn" id="btn-menu">
                     <ul className="menu">
                         <li className="register" onClick={OpenReg}><img src={regIcon} alt={regIcon}/> Регистрация</li>
@@ -254,7 +254,7 @@ const Header = () => {
                             </div>
                             <div className="field">
                                 <span id="error2" className="error_text">Пользователь с такой почтой не найден!</span>
-                                <span id="error3" className="error_text">Неверынй пароль!</span>
+                                <span id="error3" className="error_text">Неверный пароль!</span>
                                 <p><span className="red">*</span>Ваш email</p>
                                 <input
                                     onChange={e => setEmail(e.target.value)}

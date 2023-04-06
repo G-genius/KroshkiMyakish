@@ -12,24 +12,23 @@ const Footer = () => {
                 </div>
                 <div className="second-block">
                     <div className="list">
-                        <p>Все рецепты</p>
-                        <p>Новые рецепты</p>
-                        <p>Бульоны и супы</p>
-                        <p>Горячие блюда</p>
-                        <p>Салаты</p>
+                        <a href="/"><p>Все рецепты</p></a>
+                        <a href="recipes/soups"><p>Бульоны и супы</p></a>
+                        <a href="recipes/goryachie_bliuda"><p>Горячие блюда</p></a>
+                        <a href="recipes/salad"><p>Салаты</p></a>
+                        <a href="recipes/zakuski"><p>Закуски</p></a>
                     </div>
                     <div className="list">
-                        <p>Закуски</p>
-                        <p>Выпечка</p>
-                        <p>Десерты</p>
-                        <p>Соусы</p>
-                        <p>Домашние напитки</p>
+                        <a href="recipes/vypechka"><p>Выпечка</p></a>
+                        <a href="recipes/dessert"><p>Десерты</p></a>
+                        <a href="recipes/sousy"><p>Соусы</p></a>
+                        <a href="recipes/Домашние%20напитки"><p>Домашние напитки</p></a>
                     </div>
-                    <div className="list">
-                        <p>О нас</p>
-                        <p>FAQ</p>
-                        <p>Связать с нами</p>
-                    </div>
+                    {/*<div className="list">*/}
+                    {/*    <p>О нас</p>*/}
+                    {/*    <p>FAQ</p>*/}
+                    {/*    <p>Связать с нами</p>*/}
+                    {/*</div>*/}
                 </div>
                 <div className="third-block">
                     <p>Мы в соц-сетях:</p>

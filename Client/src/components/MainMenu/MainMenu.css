@@ -35,7 +35,11 @@
     }
 
     .main-menu {
-        width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 130%;
+        margin: 0 auto;
     }
 
     .menu-line img {

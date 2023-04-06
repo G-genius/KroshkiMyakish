@@ -9,24 +9,29 @@ const RecipeDto = require('../dtos/recipe-dtos')
 const ApiError = require('../exceptions/api-error')
 
 class UserService {
+    // Регистрация пользователя
     async registration(email, city, name, password, photo, about) {
-        const candidate = await UserModel.findOne({email})
+        const candidate = await UserModel.findOne({email}) // поиск по почте
         if (candidate) {
             throw  ApiError.BadRequest(`Пользователь с данной почтой ${email} уже существует`)
         }
+        // Создание ссылки для подтверждения на почту
         const hashPassword = await bcrypt.hash(password, 3)
         const activationLink = uuid.v4()
 
+        // Добавление пользователя в базу данных
         const user = await UserModel.create({email, city, password: hashPassword, activationLink, photo, about, name})
         await mailService.sendActivationMail(email, `${process.env.API_URL}/api/activate/${activationLink}`)
 
         const userDto = new UserDto(user)
+        // Сохранения токена авторизации
         const tokens = tokenService.generateTokens({...userDto})
         await tokenService.saveToken(userDto.id, tokens.refreshToken)
 
         return {...tokens, user: userDto}
     }
 
+    // Активации почты
     async activate(activationLink) {
         const user = await UserModel.findOne({activationLink})
         if (!user) {
@@ -36,6 +41,7 @@ class UserService {
         await user.save()
     }
 
+    // Авторизация
     async login(email, password) {
         const user = await UserModel.findOne({email})
         if (!user) {
@@ -53,11 +59,13 @@ class UserService {
         return {...tokens, user: userDto}
     }
 
+    // Выход из аккаунта
     async logout(refreshToken) {
         const token = await tokenService.removeToken(refreshToken)
         return token
     }
 
+    // Функция, которая будет срабатывать при изменении сайта
     async refresh(refreshToken) {
         if (!refreshToken) {
             throw ApiError.UnathorizedError();
