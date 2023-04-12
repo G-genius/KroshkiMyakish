@@ -21,7 +21,8 @@ class UserService {
 
         // Добавление пользователя в базу данных
         const user = await UserModel.create({email, city, password: hashPassword, activationLink, photo, about, name})
-        await mailService.sendActivationMail(email, `${process.env.API_URL}/api/activate/${activationLink}`)
+
+        await mailService.sendActivationMail(email, `${process.env.API_URL}/api/activate/${activationLink}`) // Отправка письма на почту
 
         const userDto = new UserDto(user)
         // Сохранения токена авторизации

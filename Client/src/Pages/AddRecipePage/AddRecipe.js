@@ -42,11 +42,10 @@ const AddRecipe = () => {
         'list', 'bullet', 'indent',
         'link', 'image'
     ]
-
     const addRecipe = () => {
         setAuthor(store.user.email)
         store.addRecipe(name, shortDesc, mainPhoto, category, time, desc, video, count, author)
-        navigate(`/recipe/${store.recipe.id}`)
+        document.location.href="/";
     }
     const updateMainPhoto = async (base64) => {
         setMainPhoto(base64[0].base64)
@@ -172,8 +171,6 @@ const AddRecipe = () => {
             </div>
             <Footer/>
         </div>
-
-
     )
 }
 export default AddRecipe

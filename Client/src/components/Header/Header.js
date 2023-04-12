@@ -137,7 +137,7 @@ const Header = () => {
     return (
         <div className="header">
             <header>
-                <h5>{store.isAuth ? `Здравствуйте, ${store.user.name}` : `Авторизуйтесь!!!`}</h5>
+                <h5>{store.isAuth ? `Здравствуйте, ${store.user.name}` : ``}</h5>
                 <span id="isActivated">Пожалуйста подтвердите ваш аккаунт, ссылка с активацией выслана на ваш Email!</span>
                 <h5 id="loading"></h5>
                 <div className="menu-btn" id="btn-menu">

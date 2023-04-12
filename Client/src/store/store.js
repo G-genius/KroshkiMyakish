@@ -115,6 +115,7 @@ export default class Store {
             const response = await RecipeService.addRecipe(name, shortDesc, mainPhoto, category, time, desc, video, count, author)
             console.log(response)
             this.setRecipe(response.data.recipe)
+            useNavigate(`/recipe/${this.recipe.id}`)
 
         } catch (e) {
             console.log(e.response?.data?.message)

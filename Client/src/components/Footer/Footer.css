@@ -36,6 +36,11 @@ footer {
 .list p {
     cursor: pointer;
 }
+.list a {
+    color: white;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
 .list p:hover {
     color: #509E2F;
 }
